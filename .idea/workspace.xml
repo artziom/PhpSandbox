@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +12,12 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="DockerExecCommand">
+    <ExecCommand>
+      <option name="command" value="php -v" />
+      <option name="imageId" value="52a1207b32f4" />
+    </ExecCommand>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,9 +31,48 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\artzi\Workspace\Web Projects\PhpSandbox" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="artziom/php-sandbox" />
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="php-sandbox" />
+          <option name="entrypoint" value="" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="80" />
+                <option name="hostPort" value="80" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="-d --rm" />
+          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="volumeBindings">
+            <list>
+              <DockerVolumeBindingImpl>
+                <option name="containerPath" value="/var/www/html/" />
+                <option name="hostPath" value="C:\Users\artzi\Workspace\Web Projects\PhpSandbox" />
+              </DockerVolumeBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,21 +82,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602092170959</updated>
-      <workItem from="1602092172240" duration="2234000" />
+      <workItem from="1602092172240" duration="7640000" />
     </task>
+    <task id="LOCAL-00001" summary="Change PHP Language Level for project to 7.4 in PhpStorm settings">
+      <created>1602102539175</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602102539175</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Change PHP Language Level for project to 7.4 in PhpStorm settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change PHP Language Level for project to 7.4 in PhpStorm settings" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="728" y="230" key="#Docker" timestamp="1602103820449">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="230" key="#Docker/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602103820449" />
+    <state x="414" y="175" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602108531773">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="810" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602108531773" />
     <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602092179954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092179954" />
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1602107941180">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="261" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602107941180" />
     <state x="832" y="418" key="Github.ShareDialog" timestamp="1602092569772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -65,9 +130,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092236218" />
+    <state x="732" y="222" key="RollbackChangesDialog" timestamp="1602108485985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="732" y="222" key="RollbackChangesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602108485985" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1602102473658">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602102473658" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602102540668">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602102540668" />
+    <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1602107853073">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602107853073" />
+    <state x="859" y="476" width="633" height="207" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize" timestamp="1602107951627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="476" width="633" height="207" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602107951627" />
   </component>
 </project>
