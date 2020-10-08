@@ -25,11 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602092170959</updated>
       <workItem from="1602092172240" duration="7640000" />
-      <workItem from="1602160245242" duration="3120000" />
+      <workItem from="1602160245242" duration="3391000" />
     </task>
     <task id="LOCAL-00001" summary="Change PHP Language Level for project to 7.4 in PhpStorm settings">
       <created>1602102539175</created>
@@ -129,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602102539175</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create docker-compose.yml with PHP and MariaDB images">
+      <created>1602165710195</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602165710195</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Test connection to database">
+      <created>1602165758438</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602165758438</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,17 +171,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change PHP Language Level for project to 7.4 in PhpStorm settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change PHP Language Level for project to 7.4 in PhpStorm settings" />
+    <MESSAGE value="Create docker-compose.yml with PHP and MariaDB images" />
+    <MESSAGE value="Test connection to database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test connection to database" />
   </component>
   <component name="WindowStateProjectService">
     <state x="728" y="230" key="#Docker" timestamp="1602165120363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="230" key="#Docker/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165120363" />
-    <state x="309" y="158" width="1092" height="882" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602165200894">
+    <state x="-47" y="145" width="1092" height="882" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602165902287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="309" y="158" width="1092" height="882" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165200894" />
+    <state x="-47" y="145" width="1092" height="882" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165902287" />
     <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602092179954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -204,10 +216,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="454" y="330" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602163618827" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602102540668">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602165760010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602102540668" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165760010" />
     <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1602107853073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
