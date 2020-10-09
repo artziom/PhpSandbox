@@ -25,7 +25,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="" />
+    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/phpinfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +82,7 @@
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
-          <option name="imageTag" value="artziom/php-sandbox" />
+          <option name="imageTag" value="artziom/php:7.4-apache_pdo_mysql" />
           <option name="buildCliOptions" value="" />
           <option name="command" value="" />
           <option name="containerName" value="php-sandbox" />
@@ -117,6 +124,8 @@
       <updated>1602092170959</updated>
       <workItem from="1602092172240" duration="7640000" />
       <workItem from="1602160245242" duration="3391000" />
+      <workItem from="1602247066073" duration="2045000" />
+      <workItem from="1602249148028" duration="2822000" />
     </task>
     <task id="LOCAL-00001" summary="Change PHP Language Level for project to 7.4 in PhpStorm settings">
       <created>1602102539175</created>
@@ -176,14 +185,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Test connection to database" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="728" y="230" key="#Docker" timestamp="1602165120363">
+    <state x="728" y="230" key="#Docker" timestamp="1602247108291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="728" y="230" key="#Docker/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165120363" />
-    <state x="-47" y="145" width="1092" height="882" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602165902287">
+    <state x="728" y="230" key="#Docker/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602247108291" />
+    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602249761704">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-47" y="145" width="1092" height="882" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165902287" />
+    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602249761704" />
     <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602092179954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -204,10 +213,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="749" y="225" key="Github.UntrackedFilesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092585516" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602092236218">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602247207876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092236218" />
+    <state x="794" y="443" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602247207876" />
     <state x="732" y="222" key="RollbackChangesDialog" timestamp="1602108485985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

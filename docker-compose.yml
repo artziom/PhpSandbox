@@ -6,11 +6,15 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
     volumes:
       - database-data:/var/lib/mysql
 
   php-sandbox:
-    image: php:7.4-apache
+    build: .
+    image: artziom/php:7.4-apache-pdo_mysql
     ports:
       - 80:80
     working_dir: /var/www/html
@@ -19,6 +23,11 @@ services:
     restart: always
     depends_on:
       - database
+    environment:
+      MYSQL_HOST: database
+      MYSQL_USERNAME: user
+      MYSQL_PASSWORD: secret
+      MYSQL_DBNAME: test
 
 volumes:
   database-data:
