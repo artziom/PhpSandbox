@@ -28,15 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PhpSandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PhpSandbox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,12 +74,8 @@
   <component name="PhpWebServerValidation" path_to_validation_script="C:\Users\artzi\Workspace\Web Projects\PhpSandbox" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1/" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="artziom/php:7.4-apache-pdo_mysql">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/twig/twig" />
-      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
@@ -156,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602165758438</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add libs in docker image required by composer and crate autoload test">
+      <created>1602284631557</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602284631557</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +185,8 @@
     <MESSAGE value="Change PHP Language Level for project to 7.4 in PhpStorm settings" />
     <MESSAGE value="Create docker-compose.yml with PHP and MariaDB images" />
     <MESSAGE value="Test connection to database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test connection to database" />
+    <MESSAGE value="Add libs in docker image required by composer and crate autoload test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add libs in docker image required by composer and crate autoload test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="294" width="840" height="690" key="#CLI_Interpreters" timestamp="1602283198221">
@@ -221,10 +217,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="507" width="570" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602279346428" />
-    <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602092179954">
+    <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602284657999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092179954" />
+    <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284657999" />
     <state x="736" y="432" width="511" height="309" key="ComposerInitDialogKey" timestamp="1602282561778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -245,54 +241,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="749" y="225" key="Github.UntrackedFilesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092585516" />
-    <state width="843" height="348" key="GridCell.Tab.0.bottom" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.0.bottom" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.0.center" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.0.center" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.0.left" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.0.left" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.0.right" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.0.right" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.1.bottom" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.1.bottom" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.1.center" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.1.center" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.1.left" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.1.left" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.1.right" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.1.right" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.2.bottom" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.2.bottom" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.2.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.2.center" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.2.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.2.center" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.2.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.2.left" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.2.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.2.left" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.2.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
-    <state width="843" height="348" key="GridCell.Tab.2.right" timestamp="1602284089110">
+    <state width="843" height="348" key="GridCell.Tab.2.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="843" height="348" key="GridCell.Tab.2.right" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.2.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284089110" />
+    <state width="843" height="348" key="GridCell.Tab.2.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602247207876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -305,10 +301,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="454" y="332" width="998" height="708" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602283219238" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602165760010">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602284633958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165760010" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284633958" />
     <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1602107853073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
