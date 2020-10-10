@@ -29,12 +29,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PhpSandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PhpSandbox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Person.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/PersonTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +128,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="dumpAutoload C:/Users/artzi/Workspace/Web Projects/PhpSandbox/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose.yml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -140,7 +141,11 @@
       <recent name="C:\Users\artzi\Workspace\Web Projects\PhpSandbox" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.PhpSandbox">
+    <configuration name="PhpSandbox" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="Docker Compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -149,6 +154,11 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.PhpSandbox" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -164,7 +174,7 @@
       <workItem from="1602249148028" duration="2822000" />
       <workItem from="1602275964808" duration="3856000" />
       <workItem from="1602310480028" duration="2254000" />
-      <workItem from="1602312772438" duration="653000" />
+      <workItem from="1602312772438" duration="1926000" />
     </task>
     <task id="LOCAL-00001" summary="Change PHP Language Level for project to 7.4 in PhpStorm settings">
       <created>1602102539175</created>
@@ -201,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602311221779</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add PHPUnit for project">
+      <created>1602313635887</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602313635887</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +254,8 @@
     <MESSAGE value="Test connection to database" />
     <MESSAGE value="Add libs in docker image required by composer and crate autoload test" />
     <MESSAGE value="Update IDE files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update IDE files" />
+    <MESSAGE value="Add PHPUnit for project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PHPUnit for project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="533" y="294" width="840" height="690" key="#CLI_Interpreters" timestamp="1602313294772">
@@ -260,10 +278,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="175" key="#Servers/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602276345413" />
-    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602283132173">
+    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602314355716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602283132173" />
+    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314355716" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1602313861856">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313861856" />
     <state x="668" y="507" width="570" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1602279346428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,6 +294,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284657999" />
+    <state x="774" y="402" key="ComposerDumpAutoloadDialog" timestamp="1602313994330">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="774" y="402" key="ComposerDumpAutoloadDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313994330" />
     <state x="736" y="432" width="511" height="309" key="ComposerInitDialogKey" timestamp="1602282561778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -292,22 +318,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="749" y="225" key="Github.UntrackedFilesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092585516" />
-    <state width="843" height="348" key="GridCell.Tab.0.bottom" timestamp="1602284702583">
+    <state width="1248" height="282" key="GridCell.Tab.0.bottom" timestamp="1602314693452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.0.center" timestamp="1602284702583">
+    <state width="1248" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693452" />
+    <state width="1248" height="282" key="GridCell.Tab.0.center" timestamp="1602314693451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.0.left" timestamp="1602284702583">
+    <state width="1248" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693451" />
+    <state width="1248" height="282" key="GridCell.Tab.0.left" timestamp="1602314693451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.0.right" timestamp="1602284702583">
+    <state width="1248" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693451" />
+    <state width="1248" height="282" key="GridCell.Tab.0.right" timestamp="1602314693451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="843" height="348" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state width="1248" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693451" />
     <state width="843" height="348" key="GridCell.Tab.1.bottom" timestamp="1602284702583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -340,6 +366,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="843" height="348" key="GridCell.Tab.2.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
+    <state x="715" y="243" key="NewPhpClassDialog" timestamp="1602313708517">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="243" key="NewPhpClassDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313708517" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602247207876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -352,10 +382,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="454" y="332" width="998" height="708" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313428919" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602311223406">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602313643272">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602311223406" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313643272" />
     <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1602107853073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -364,10 +394,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="859" y="476" width="633" height="207" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602107951627" />
+    <state x="777" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602313738277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313738277" />
     <state x="283" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1602283164560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="283" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602283164560" />
+    <state x="677" y="264" width="885" height="661" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1602314110872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="264" width="885" height="661" key="com.jetbrains.php.test.PhpNewTestDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314110872" />
     <state x="667" y="224" width="585" height="592" key="find.popup" timestamp="1602277892987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

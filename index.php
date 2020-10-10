@@ -18,3 +18,5 @@ echo "Hello World!<br>";
 $log = new Logger("logger_name");
 $log->pushHandler(new StreamHandler('app.log', Logger::WARNING));
 $log->warning('Test warning');
+
+$p1 = new Person("Artur", 30);
