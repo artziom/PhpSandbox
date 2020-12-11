@@ -29,16 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c9a3e82-874e-441d-84e9-ed64d78402df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PhpSandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PhpSandbox.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php-test-framework.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PersonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PersonTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +47,10 @@
     <ExecCommand>
       <option name="command" value="/bin/bash" />
       <option name="imageId" value="sha256:bc0158a1730d0bb46f513b08e5625e601e00ac8dd9af3475438f8804d66e316e" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="/bin/bash" />
+      <option name="imageId" value="sha256:43313a5855478452452577541738a459e92a862e1dca638344926e4839af9b6f" />
     </ExecCommand>
     <ExecCommand>
       <option name="command" value="php -v" />
@@ -77,7 +73,6 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="61895745-7a51-4852-bebb-204ea2f4934b" name="localhost" use_path_mappings="true">
@@ -155,7 +150,15 @@
       <recent name="C:\Users\artur\Workspace\Web Projects\PhpSandbox\docker" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.PhpSandbox">
+  <component name="RunManager" selected="Docker.Docker Compose">
+    <configuration name="PersonTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="PersonTest" file="$PROJECT_DIR$/tests/PersonTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PersonTest.testIsAdult" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="PersonTest" file="$PROJECT_DIR$/tests/PersonTest.php" method="testIsAdult" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="PhpSandbox" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$" />
       <method v="2" />
@@ -163,6 +166,7 @@
     <configuration name="Docker Compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="commandLineOptions" value="--build" />
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -171,10 +175,14 @@
     <list>
       <item itemvalue="Docker.Docker Compose" />
       <item itemvalue="PHPUnit.PhpSandbox" />
+      <item itemvalue="PHPUnit.PersonTest.testIsAdult" />
+      <item itemvalue="PHPUnit.PersonTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.PhpSandbox" />
+        <item itemvalue="PHPUnit.PersonTest" />
+        <item itemvalue="PHPUnit.PersonTest.testIsAdult" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +250,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -275,24 +293,12 @@
     <MESSAGE value="Add PHPUnit for project" />
     <option name="LAST_COMMIT_MESSAGE" value="Add PHPUnit for project" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>19</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>20</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PhpSandbox@PersonTest.xml" NAME="PersonTest Coverage Results" MODIFIED="1607695307242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PhpSandbox@PhpSandbox.xml" NAME="PhpSandbox Coverage Results" MODIFIED="1607696292370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
