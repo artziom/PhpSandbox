@@ -28,12 +28,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Person.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/PersonTest.php" afterDir="false" />
+    <list default="true" id="8c9a3e82-874e-441d-84e9-ed64d78402df" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PhpSandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PhpSandbox.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php-test-framework.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/PersonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PersonTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +48,14 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <interpreter name="artziom/php:7.4-apache-pdo_mysql" composer="composer" />
+      <interpreter name="artziom/php:8.0-apache-pdo_mysql" composer="composer" />
     </execution>
   </component>
   <component name="DockerExecCommand">
+    <ExecCommand>
+      <option name="command" value="/bin/bash" />
+      <option name="imageId" value="sha256:bc0158a1730d0bb46f513b08e5625e601e00ac8dd9af3475438f8804d66e316e" />
+    </ExecCommand>
     <ExecCommand>
       <option name="command" value="php -v" />
       <option name="imageId" value="52a1207b32f4" />
@@ -68,6 +77,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="61895745-7a51-4852-bebb-204ea2f4934b" name="localhost" use_path_mappings="true">
@@ -78,45 +88,45 @@
     </servers>
   </component>
   <component name="PhpWebServerValidation" path_to_validation_script="C:\Users\artzi\Workspace\Web Projects\PhpSandbox" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1/" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="artziom/php:7.4-apache-pdo_mysql">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="artziom/php:8.0-apache-pdo_mysql">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iYkynh5CDXoiSQ9pWSfXkKU0iM" />
@@ -129,16 +139,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Docker" />
     <property name="dumpAutoload C:/Users/artzi/Workspace/Web Projects/PhpSandbox/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose.yml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\artzi\Workspace\Web Projects\PhpSandbox" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\artur\Workspace\Web Projects\PhpSandbox\docker" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.PhpSandbox">
@@ -154,6 +168,10 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.Docker Compose" />
+      <item itemvalue="PHPUnit.PhpSandbox" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.PhpSandbox" />
@@ -257,162 +275,24 @@
     <MESSAGE value="Add PHPUnit for project" />
     <option name="LAST_COMMIT_MESSAGE" value="Add PHPUnit for project" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="533" y="294" width="840" height="690" key="#CLI_Interpreters" timestamp="1602313294772">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="533" y="294" width="840" height="690" key="#CLI_Interpreters/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313294772" />
-    <state x="744" y="574" key="#Chrome_Settings" timestamp="1602282374321">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="744" y="574" key="#Chrome_Settings/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602282374321" />
-    <state x="728" y="230" key="#Docker" timestamp="1602247108291">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="728" y="230" key="#Docker/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602247108291" />
-    <state x="667" y="128" key="#PHP" timestamp="1602282531526">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="128" key="#PHP/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602282531526" />
-    <state x="540" y="175" key="#Servers" timestamp="1602276345413">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="175" key="#Servers/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602276345413" />
-    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602314355716">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="269" y="39" width="1092" height="944" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314355716" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1602313861856">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313861856" />
-    <state x="668" y="507" width="570" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1602279346428">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="507" width="570" height="391" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602279346428" />
-    <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602284657999">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284657999" />
-    <state x="774" y="402" key="ComposerDumpAutoloadDialog" timestamp="1602313994330">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="774" y="402" key="ComposerDumpAutoloadDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313994330" />
-    <state x="736" y="432" width="511" height="309" key="ComposerInitDialogKey" timestamp="1602282561778">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="736" y="432" width="511" height="309" key="ComposerInitDialogKey/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602282561778" />
-    <state x="509" y="541" key="DockerComposeFileDialog" timestamp="1602165168643">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="509" y="541" key="DockerComposeFileDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602165168643" />
-    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1602281257398">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="739" y="261" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602281257398" />
-    <state x="832" y="418" key="Github.ShareDialog" timestamp="1602092569772">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="832" y="418" key="Github.ShareDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092569772" />
-    <state x="749" y="225" key="Github.UntrackedFilesDialog" timestamp="1602092585516">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="749" y="225" key="Github.UntrackedFilesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602092585516" />
-    <state width="1248" height="282" key="GridCell.Tab.0.bottom" timestamp="1602314693452">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1248" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693452" />
-    <state width="1248" height="282" key="GridCell.Tab.0.center" timestamp="1602314693451">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1248" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693451" />
-    <state width="1248" height="282" key="GridCell.Tab.0.left" timestamp="1602314693451">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1248" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693451" />
-    <state width="1248" height="282" key="GridCell.Tab.0.right" timestamp="1602314693451">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1248" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314693451" />
-    <state width="843" height="348" key="GridCell.Tab.1.bottom" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.1.center" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.1.left" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.1.right" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.2.bottom" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.2.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.2.center" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.2.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.2.left" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.2.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state width="843" height="348" key="GridCell.Tab.2.right" timestamp="1602284702583">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="843" height="348" key="GridCell.Tab.2.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602284702583" />
-    <state x="715" y="243" key="NewPhpClassDialog" timestamp="1602313708517">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="715" y="243" key="NewPhpClassDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313708517" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602247207876">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="794" y="443" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602247207876" />
-    <state x="732" y="222" key="RollbackChangesDialog" timestamp="1602275409658">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="732" y="222" key="RollbackChangesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602275409658" />
-    <state x="454" y="332" width="998" height="708" key="SettingsEditor" timestamp="1602313428919">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="454" y="332" width="998" height="708" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313428919" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602313643272">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313643272" />
-    <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1602107853073">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="859" y="476" width="710" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602107853073" />
-    <state x="859" y="476" width="633" height="207" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize" timestamp="1602107951627">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="859" y="476" width="633" height="207" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602107951627" />
-    <state x="777" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602313738277">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="777" y="209" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602313738277" />
-    <state x="283" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1602283164560">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="283" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602283164560" />
-    <state x="677" y="264" width="885" height="661" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1602314110872">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="677" y="264" width="885" height="661" key="com.jetbrains.php.test.PhpNewTestDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602314110872" />
-    <state x="667" y="224" width="585" height="592" key="find.popup" timestamp="1602277892987">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="224" width="585" height="592" key="find.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602277892987" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602283965137">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602283965137" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>19</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
