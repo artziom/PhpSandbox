@@ -29,8 +29,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c9a3e82-874e-441d-84e9-ed64d78402df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/xdebug_info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PhpSandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PhpSandbox.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/PersonTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PersonTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,14 +136,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Docker" />
     <property name="dumpAutoload C:/Users/artzi/Workspace/Web Projects/PhpSandbox/composer.json" value="--no-interaction --ansi --verbose" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose.yml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -150,7 +155,7 @@
       <recent name="C:\Users\artur\Workspace\Web Projects\PhpSandbox\docker" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Docker Compose">
+  <component name="RunManager" selected="PHPUnit.PersonTest">
     <configuration name="PersonTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="PersonTest" file="$PROJECT_DIR$/tests/PersonTest.php" scope="Class" />
       <method v="2" />
@@ -174,14 +179,14 @@
     </configuration>
     <list>
       <item itemvalue="Docker.Docker Compose" />
-      <item itemvalue="PHPUnit.PhpSandbox" />
-      <item itemvalue="PHPUnit.PersonTest.testIsAdult" />
       <item itemvalue="PHPUnit.PersonTest" />
+      <item itemvalue="PHPUnit.PersonTest.testIsAdult" />
+      <item itemvalue="PHPUnit.PhpSandbox" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.PhpSandbox" />
         <item itemvalue="PHPUnit.PersonTest" />
+        <item itemvalue="PHPUnit.PhpSandbox" />
         <item itemvalue="PHPUnit.PersonTest.testIsAdult" />
       </list>
     </recent_temporary>
@@ -189,7 +194,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cfea2e09-f3c5-444f-8157-283c326aab3e" name="Default Changelist" comment="" />
+      <changelist id="8c9a3e82-874e-441d-84e9-ed64d78402df" name="Default Changelist" comment="" />
       <created>1602092170959</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -201,6 +206,7 @@
       <workItem from="1602275964808" duration="3856000" />
       <workItem from="1602310480028" duration="2254000" />
       <workItem from="1602312772438" duration="1926000" />
+      <workItem from="1607861149502" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="Change PHP Language Level for project to 7.4 in PhpStorm settings">
       <created>1602102539175</created>
@@ -298,7 +304,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PhpSandbox@PersonTest.xml" NAME="PersonTest Coverage Results" MODIFIED="1607695307242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PhpSandbox@PersonTest.xml" NAME="PersonTest Coverage Results" MODIFIED="1607861970934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PhpSandbox@PhpSandbox.xml" NAME="PhpSandbox Coverage Results" MODIFIED="1607696292370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -19,4 +19,11 @@ class PersonTest extends TestCase
         $person = new Person("Artur", 12);
         $this->assertFalse($person->isAdult(), "This person should be kid");
     }
+
+    public function testName()
+    {
+        $name = "Obi Wan Kenobi";
+        $person = new Person($name, 12);
+        $this->assertEquals($name, $person->getName(), "Name of this person should be $name");
+    }
 }

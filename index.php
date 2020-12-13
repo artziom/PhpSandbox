@@ -13,10 +13,10 @@ try {
     die();
 }
 
-$log = new Logger("logger_name");
-$log->pushHandler(new StreamHandler('app.log', Logger::WARNING));
+$log = new Logger("PhpSandbox");
+$log->pushHandler(new StreamHandler('var/log/app.log', Logger::WARNING));
+$log->warning('Starting App');
 
 $p1 = new Person("Artur", 10);
-if (!$p1->isAdult()) {
-    $log->warning('This person should be an adult!');
-}
+
+$log->warning('Closing App');
