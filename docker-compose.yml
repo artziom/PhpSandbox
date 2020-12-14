@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+    volumes:
+      - database-data:/var/lib/mysql
+
+  php-sandbox:
+    build: docker/
+    image: artziom/php:8.0-apache-pdo_mysql
+    ports:
+      - 80:80
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    restart: always
+    depends_on:
+      - database
+    environment:
+      MYSQL_HOST: database
+      MYSQL_USERNAME: user
+      MYSQL_PASSWORD: secret
+      MYSQL_DBNAME: test
+
+volumes:
+  database-data:
