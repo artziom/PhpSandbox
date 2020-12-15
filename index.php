@@ -19,4 +19,10 @@ $log->warning('Starting App');
 
 $p1 = new Person("Artur", 10);
 
+$redis = new Redis();
+$redis->connect("redis");
+$redisInfo = $redis->info();
+$redis->set("server:name", "PhpSandbox");
+echo $redis->get("server:name");
+
 $log->warning('Closing App');
