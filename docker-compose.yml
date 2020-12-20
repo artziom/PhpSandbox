@@ -3,7 +3,6 @@ version: "3.8"
 services:
   database:
     image: mariadb
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: test
@@ -20,7 +19,6 @@ services:
     working_dir: /var/www/html
     volumes:
       - ./:/var/www/html
-    restart: always
     depends_on:
       - database
     environment:
