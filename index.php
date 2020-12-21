@@ -25,4 +25,11 @@ $redisInfo = $redis->info();
 $redis->set("server:name", "PhpSandbox");
 echo $redis->get("server:name");
 
+echo "<br>";
+
+$memcached = new Memcached();
+$memcached->addServer("memcached", 11211);
+$memcached->set("test", "Hello World!");
+echo $memcached->get("test");
+
 $log->warning('Closing App');
