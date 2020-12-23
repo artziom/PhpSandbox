@@ -25,6 +25,14 @@ class Person
         return $this->name;
     }
 
+    /**
+     * @return int
+     */
+    public function getAge(): int
+    {
+        return $this->age;
+    }
+
     public function isAdult()
     {
         return $this->age >= 18;

@@ -22,14 +22,14 @@ $p1 = new Person("Artur", 10);
 $redis = new Redis();
 $redis->connect("redis");
 $redisInfo = $redis->info();
-$redis->set("server:name", "PhpSandbox");
-echo $redis->get("server:name");
-
-echo "<br>";
+$redis->hSet("redis:person", 'name', $p1->getName());
+$redis->hSet("redis:person", 'age', $p1->getAge());
+var_dump($redis->hGetAll("redis:person"));
+var_dump($redis->hGet("redis:person", "name"));
 
 $memcached = new Memcached();
 $memcached->addServer("memcached", 11211);
-$memcached->set("test", "Hello World!");
-echo $memcached->get("test");
+$memcached->set("memcached:person", $p1);
+var_dump($memcached->get("memcached:person"));
 
 $log->warning('Closing App');
