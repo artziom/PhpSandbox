@@ -4,6 +4,10 @@
 ### App cache, log, tmp ###
 /var/
 
+### Docker env files ###
+/docker/env/*.env
+!/docker/env/*.example.env
+
 # Created by https://www.toptal.com/developers/gitignore/api/phpstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpstorm
 

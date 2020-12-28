@@ -3,16 +3,17 @@ version: "3.8"
 services:
   database:
     image: mariadb
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: test
-      MYSQL_USER: user
-      MYSQL_PASSWORD: secret
+    env_file:
+      - docker/env/database.env
     volumes:
       - database-data:/var/lib/mysql
+    ports:
+      - 3306:3306
 
   apache-php:
-    build: docker/
+    build:
+      context: ./docker/dockerfile/
+      dockerfile: apache-php.dockerfile
     image: artziom/php:8.0-apache-pdo_mysql
     ports:
       - 80:80
@@ -21,11 +22,8 @@ services:
       - ./:/var/www/html
     depends_on:
       - database
-    environment:
-      MYSQL_HOST: database
-      MYSQL_USERNAME: user
-      MYSQL_PASSWORD: secret
-      MYSQL_DBNAME: test
+    env_file:
+      - docker/env/apache-php.env
 
   redis:
     image: redis:6.2-rc1
@@ -36,11 +34,13 @@ services:
 
   redsmin:
     image: redsmin/proxy
+    env_file:
+      - docker/env/redsmin.env
 
   redis-commander:
     image: rediscommander/redis-commander
     ports:
-    - 8081:8081
+      - 8081:8081
     environment:
       REDIS_HOSTS: local:redis:6379
 
@@ -52,12 +52,9 @@ services:
   blackfire:
     image: blackfire/blackfire
     ports:
-    - 8707:8707
-    environment:
-      BLACKFIRE_SERVER_ID: ~
-      BLACKFIRE_SERVER_TOKEN: ~
-      BLACKFIRE_CLIENT_ID: ~
-      BLACKFIRE_CLIENT_TOKEN: ~
+      - 8707:8707
+    env_file:
+      - docker/env/blackfire.env
 
 volumes:
   database-data:
