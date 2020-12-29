@@ -22,15 +22,18 @@ $query->execute();
 
 $p1 = new Person("Artur", 10);
 
-$query = $dbh->prepare("INSERT INTO person (name, age) VALUE (:name, :age)");
-$query->execute([
-    ":name" => $p1->getName(),
-    ":age" => $p1->getAge()
-]);
 $query = $dbh->prepare("SELECT * FROM person");
 $query->execute();
 $results = $query->fetchAll();
 var_dump($results);
+
+if (!$results) {
+    $query = $dbh->prepare("INSERT INTO person (name, age) VALUE (:name, :age)");
+    $query->execute([
+        ":name" => $p1->getName(),
+        ":age" => $p1->getAge()
+    ]);
+}
 
 $redis = new Redis();
 $redis->connect("redis");
