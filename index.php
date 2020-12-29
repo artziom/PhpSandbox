@@ -1,6 +1,5 @@
 <?php
-
-require __DIR__ . '/vendor/autoload.php';
+require "./vendor/autoload.php";
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -54,15 +53,18 @@ var_dump($memcached->getStats());
 $log->warning('Closing App');
 
 /**
- * @return array<string>
+ * @return array<int, string>
  */
-function takesAnInt(int $i) {
+function takesAnInt(int $i) : array
+{
     return [$i, "hello"];
 }
 
-$data = ["some text", 5];
-takesAnInt($data[0]);
+$data = [1, 5];
+$a = takesAnInt($data[0]);
+
+var_dump($a);
 
 $condition = rand(0, 5);
 if ($condition) {
-} elseif ($condition) {}
+}
