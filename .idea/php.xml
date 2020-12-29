@@ -132,7 +132,7 @@
   </component>
   <component name="Psalm">
     <Psalm_settings>
-      <psalm_fixer_by_interpreter interpreter_id="4ed6adae-eefa-422b-83ae-7ac755034310" tool_path="/opt/project/vendor/bin/psalm" timeout="60000" />
+      <psalm_fixer_by_interpreter interpreter_id="4ed6adae-eefa-422b-83ae-7ac755034310" tool_path="/var/www/html/vendor/bin/psalm" timeout="60000" />
     </Psalm_settings>
   </component>
 </project>
