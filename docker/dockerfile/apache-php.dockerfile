@@ -5,13 +5,15 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 # Install tools
 RUN apt-get update && apt-get install -y \
-        libzip-dev unzip libmemcached-dev zlib1g-dev
+    libzip-dev unzip libmemcached-dev zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install xdebug, pdo_mysql, zip
 RUN pecl install xdebug-3.0.1 \
     && pecl install redis \
     && pecl install memcached \
-	&& docker-php-ext-enable redis xdebug memcached \
+    && pecl install mongodb \
+	&& docker-php-ext-enable redis xdebug memcached mongodb \
     && docker-php-ext-install pdo_mysql zip
 
 # Install Blackfire agent

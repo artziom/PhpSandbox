@@ -70,3 +70,6 @@ $condition = rand(0, 5);
 if ($condition) {
     var_dump($condition);
 }
+
+$mongoDB = new MongoDB\Client();
+var_dump($mongoDB);
