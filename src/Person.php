@@ -33,7 +33,7 @@ class Person
         return $this->age;
     }
 
-    public function isAdult()
+    public function isAdult(): bool
     {
         return $this->age >= 18;
     }
