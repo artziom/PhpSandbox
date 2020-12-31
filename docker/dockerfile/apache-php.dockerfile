@@ -5,7 +5,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 # Install tools
 RUN apt-get update && apt-get install -y \
-    libzip-dev unzip libmemcached-dev zlib1g-dev \
+    libzip-dev unzip libssl-dev libmemcached-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install xdebug, pdo_mysql, zip

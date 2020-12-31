@@ -1,8 +1,41 @@
 <?php
 require "./vendor/autoload.php";
 
+$mongoClient = new MongoDB\Client("mongodb://mongo/", [
+    'username' => 'root',
+    'password' => 'secret',
+]);
+
+$mongoDB = $mongoClient->selectDatabase("php_sandbox");
+
+$userCollection = $mongoDB->selectCollection("movies");
+$userCollection->drop();
+
+$userCollection->insertOne([
+    'title' => "Godzilla",
+    "year" => 2014
+]);
+
+$userCollection->insertOne([
+    'title' => "Godzilla King of the Monsters",
+    "year" => 2018
+]);
+
+$userCollection->updateMany([
+    'year' => 2018
+], [
+    '$set' => ["year" => 2019]
+]);
+
+$allMovies = $userCollection->find();
+foreach ($allMovies as $movie) {
+    var_dump($movie);
+}
+exit();
+
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+
 
 $log = new Logger("PhpSandbox");
 $log->pushHandler(new StreamHandler('var/log/app.log', Logger::WARNING));
@@ -70,6 +103,3 @@ $condition = rand(0, 5);
 if ($condition) {
     var_dump($condition);
 }
-
-$mongoDB = new MongoDB\Client();
-var_dump($mongoDB);
