@@ -13,7 +13,8 @@ RUN pecl install xdebug-3.0.1 \
     && pecl install redis \
     && pecl install memcached \
     && pecl install mongodb \
-	&& docker-php-ext-enable redis xdebug memcached mongodb \
+    && pecl install xhprof \
+	&& docker-php-ext-enable redis xdebug memcached mongodb xhprof\
     && docker-php-ext-install pdo_mysql zip
 
 # Install Blackfire agent
@@ -31,4 +32,5 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
     && echo "xdebug.mode=develop,debug,coverage,gcstats,profile,trace" >> $PHP_INI_DIR/php.ini \
     && echo "xdebug.start_with_request=trigger" >> $PHP_INI_DIR/php.ini \
     && echo "xdebug.output_dir=/var/www/html/var/xdebug_output" >> $PHP_INI_DIR/php.ini \
-    && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini
+    && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini \
+    && echo "xhprof.output_dir=/tmp/xhprof" >> $PHP_INI_DIR/php.ini

@@ -1,6 +1,9 @@
 <?php
 require "./vendor/autoload.php";
 
+// https://github.com/longxinH/xhprof/blob/master/examples/sample.php
+xhprof_enable();
+
 $mongoClient = new MongoDB\Client("mongodb://mongo/", [
     'username' => 'root',
     'password' => 'secret',
@@ -31,6 +34,10 @@ $allMovies = $userCollection->find();
 foreach ($allMovies as $movie) {
     var_dump($movie);
 }
+
+
+$data = xhprof_disable();
+var_dump($data);
 exit();
 
 use Monolog\Logger;
