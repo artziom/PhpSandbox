@@ -106,6 +106,8 @@ $a = takesAnInt($data[0]);
 
 var_dump($a);
 
+
+
 $condition = rand(0, 5);
 if ($condition) {
     var_dump($condition);
