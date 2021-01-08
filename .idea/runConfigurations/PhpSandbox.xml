@@ -1,6 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="PhpSandbox" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-    <TestRunner class="PersonTest" directory="$PROJECT_DIR$" file="$PROJECT_DIR$/tests/PersonTest.php" options="--cache-result-file=/opt/project/var/cache/.phpunit.result.cache" />
-    <method v="2" />
-  </configuration>
-</component>

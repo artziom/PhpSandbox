@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <CommandLine>
+      <PhpTestInterpreterSettings>
+        <option name="interpreterName" value="apache-php" />
+      </PhpTestInterpreterSettings>
+    </CommandLine>
+    <TestRunner class="PersonTest" directory="$PROJECT_DIR$/tests" file="$PROJECT_DIR$/tests/PersonTest.php" options="--cache-result-file=/code/var/cache/.phpunit.result.cache" />
+    <method v="2" />
+  </configuration>
+</component>
