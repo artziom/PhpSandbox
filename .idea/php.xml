@@ -60,6 +60,7 @@
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -142,10 +143,5 @@
       <phpunit_by_interpreter interpreter_id="93ea0221-233f-4d1d-ae05-74e90f6d74ed" custom_loader_path="/code/vendor/autoload.php" />
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
     </phpunit_settings>
-  </component>
-  <component name="Psalm">
-    <Psalm_settings>
-      <psalm_fixer_by_interpreter interpreter_id="93ea0221-233f-4d1d-ae05-74e90f6d74ed" tool_path="/code/vendor/bin/psalm" timeout="60000" />
-    </Psalm_settings>
   </component>
 </project>
