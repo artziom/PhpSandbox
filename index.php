@@ -66,6 +66,7 @@ $query->execute();
 $results = $query->fetchAll();
 var_dump($results);
 
+
 if (!$results) {
     $query = $dbh->prepare("INSERT INTO person (name, age) VALUE (:name, :age)");
     $query->execute([

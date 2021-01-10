@@ -7,12 +7,12 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
     cacheDirectory="/var/cache/psalm/"
 >
-    <projectFiles>
-        <directory name="./"/>
-        <ignoreFiles>
-            <directory name="./docker"/>
-            <directory name="./var"/>
-            <directory name="./vendor"/>
-        </ignoreFiles>
-    </projectFiles>
+<!--    <projectFiles>-->
+<!--        <directory name="./"/>-->
+<!--        <ignoreFiles>-->
+<!--            <directory name="./docker"/>-->
+<!--            <directory name="./var"/>-->
+<!--            <directory name="./vendor"/>-->
+<!--        </ignoreFiles>-->
+<!--    </projectFiles>-->
 <plugins><pluginClass class="Psalm\PhpUnitPlugin\Plugin"/></plugins></psalm>
