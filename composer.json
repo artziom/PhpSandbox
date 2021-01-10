@@ -7,7 +7,8 @@
     "ext-memcached": "*",
     "ext-xdebug": "*",
     "ext-mongodb": "*",
-    "ext-xhprof": "*"
+    "ext-xhprof": "*",
+    "itsgoingd/clockwork": "^5.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
