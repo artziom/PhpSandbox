@@ -5,14 +5,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
-    cacheDirectory="var/cache"
+    cacheDirectory="/var/cache/psalm/"
 >
     <projectFiles>
-        <directory name="./" />
+        <directory name="./"/>
         <ignoreFiles>
-            <directory name="docker" />
-            <directory name="var" />
-            <directory name="vendor" />
+            <directory name="./docker"/>
+            <directory name="./var"/>
+            <directory name="./vendor"/>
         </ignoreFiles>
     </projectFiles>
-</psalm>
+<plugins><pluginClass class="Psalm\PhpUnitPlugin\Plugin"/></plugins></psalm>
