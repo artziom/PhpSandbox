@@ -1,7 +1,8 @@
 <?php
 require "./vendor/autoload.php";
 
-$clockwork = Clockwork\Support\Vanilla\Clockwork::init([ 'api' => '/clockwork.php?request=' ]);
+$clockwork = Clockwork\Support\Vanilla\Clockwork::init([ 'api' => '/clockwork.php?request=', 'register_helpers' => true ]);
+clock("test1");
 $clockwork->requestProcessed();
 
 // https://github.com/longxinH/xhprof/blob/master/examples/sample.php
@@ -37,11 +38,6 @@ $allMovies = $userCollection->find();
 foreach ($allMovies as $movie) {
     var_dump($movie);
 }
-
-
-$data = xhprof_disable();
-var_dump($data);
-exit();
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -110,9 +106,10 @@ $a = takesAnInt($data[0]);
 
 var_dump($a);
 
-
-
 $condition = rand(0, 5);
 if ($condition) {
     var_dump($condition);
 }
+
+$data = xhprof_disable();
+var_dump($data);
