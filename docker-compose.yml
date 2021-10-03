@@ -47,6 +47,7 @@ services:
     image: artziom/php:8.0-fpm
     volumes:
       - ./:/code
+    working_dir: /code
     depends_on:
       - database
       - mongo
