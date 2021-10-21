@@ -1,46 +1,29 @@
 server {
-    listen       ${NGINX_PORT};
-    listen  [::]:${NGINX_PORT};
-    server_name  localhost;
+    listen ${NGINX_PORT};
+    server_name localhost;
 
-    #charset koi8-r;
-    #access_log  /var/log/nginx/host.access.log  main;
+    root ${NGINX_PHP_ROOT};
 
     location / {
-        root   /code;
-        index  index.php index.html index.htm;
+        # try to serve file directly, fallback to index.php
+        try_files $uri /index.php$is_args$args;
     }
 
-    #error_page  404              /404.html;
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass ${NGINX_FASTCGI};
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
 
-    # redirect server error pages to the static page /50x.html
-    #
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html {
-        root   /usr/share/nginx/html;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+
+        internal;
     }
 
-    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-    #
-    #location ~ \.php$ {
-    #    proxy_pass   http://127.0.0.1;
-    #}
-
-    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-    #
     location ~ \.php$ {
-        root           ${NGINX_PHP_ROOT};
-        try_files      $uri =404;
-        fastcgi_pass   ${NGINX_FASTCGI};
-        fastcgi_index  index.php;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
+        return 404;
     }
 
-    # deny access to .htaccess files, if Apache's document root
-    # concurs with nginx's one
-    #
-    #location ~ /\.ht {
-    #    deny  all;
-    #}
+    error_log /var/log/nginx/project_error.log;
+    access_log /var/log/nginx/project_access.log;
 }

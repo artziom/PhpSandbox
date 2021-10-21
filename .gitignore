@@ -6,7 +6,7 @@
 
 ### Docker env files ###
 /docker/env/*.env
-!/docker/env/*.example.env
+!/docker/env/*.default.env
 
 # Created by https://www.toptal.com/developers/gitignore/api/phpstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpstorm
@@ -21,6 +21,9 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
 
 # Generated files
 .idea/**/contentModel.xml

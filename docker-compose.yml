@@ -1,104 +1,37 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  database:
+  mariadb:
     image: mariadb
     env_file:
-      - docker/env/database.env
+      - docker/env/project.env
     volumes:
-      - database-data:/var/lib/mysql
+      - mariadb-data:/var/lib/mysql
     ports:
-      - 3306:3306
+      - "3306:3306"
 
-  mongo:
-    image: mongo
+  php-fpm:
+    build: docker/dockerfile/php-fpm
     env_file:
-      - docker/env/mongo.env
-
-#  mongo-express:
-#    image: mongo-express
-#    depends_on:
-#      - mongo
-#    ports:
-#      - 8082:8081
-#    env_file:
-#      - docker/env/mongo-express.env
-
-#  apache-php:
-#    build:
-#      context: ./docker/dockerfile/
-#      dockerfile: apache-php.dockerfile
-#    image: artziom/php:8.0-apache-pdo_mysql
-#    ports:
-#      - 80:80
-#    working_dir: /var/www/html
-#    volumes:
-#      - ./:/var/www/html
-#    depends_on:
-#      - database
-#      - mongo
-#    env_file:
-#      - docker/env/apache-php.env
-
-  php:
-    build:
-      context: ./docker/dockerfile/
-      dockerfile: php.dockerfile
-    image: artziom/php:8.0-fpm
+      - docker/env/project.env
     volumes:
-      - ./:/code
-    working_dir: /code
+      - ./application:/application
+    working_dir: /application
     depends_on:
-      - database
-      - mongo
-    env_file:
-      - docker/env/apache-php.env
+      - mariadb
 
-  web:
+  webserver:
     image: nginx
+    env_file:
+      - docker/env/project.env
     volumes:
       - ./docker/templates:/etc/nginx/templates
-      - ./:/code
+      - ./application:/application
+    working_dir: /application
     ports:
-      - 80:80
+      - "80:80"
     depends_on:
-      - php
-    environment:
-      - NGINX_PORT=80
-      - NGINX_FASTCGI=php:9000
-      - NGINX_PHP_ROOT=/code
-
-  redis:
-    image: redis:6.2-rc1
-    volumes:
-      - redis-data:/data
-    ports:
-      - 6379:6379
-
-#  redsmin:
-#    image: redsmin/proxy
-#    env_file:
-#      - docker/env/redsmin.env
-
-#  redis-commander:
-#    image: rediscommander/redis-commander
-#    ports:
-#      - 8081:8081
-#    environment:
-#      REDIS_HOSTS: local:redis:6379
-
-  memcached:
-    image: memcached
-    ports:
-      - 11211:11211
-
-#  blackfire:
-#    image: blackfire/blackfire
-#    ports:
-#      - 8707:8707
-#    env_file:
-#      - docker/env/blackfire.env
+      - php-fpm
 
 volumes:
-  database-data:
-  redis-data:
+  mariadb-data:
