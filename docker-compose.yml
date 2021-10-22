@@ -1,14 +1,12 @@
 version: "3.9"
 
 services:
-  mariadb:
-    image: mariadb
+  database:
+    image: postgres
     env_file:
       - docker/env/project.env
-    volumes:
-      - mariadb-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "5432:5432"
 
   php-fpm:
     build: docker/dockerfile/php-fpm
@@ -18,7 +16,7 @@ services:
       - ./application:/application
     working_dir: /application
     depends_on:
-      - mariadb
+      - database
 
   webserver:
     image: nginx
@@ -32,6 +30,3 @@ services:
       - "80:80"
     depends_on:
       - php-fpm
-
-volumes:
-  mariadb-data:

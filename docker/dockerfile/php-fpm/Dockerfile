@@ -25,6 +25,6 @@ RUN curl -sS https://getcomposer.org/installer | php  \
 RUN pecl install \
     apcu \
     && docker-php-ext-install \
-    opcache intl \
+    opcache intl pdo_pgsql \
     && docker-php-ext-enable \
     apcu
