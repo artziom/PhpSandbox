@@ -87,6 +87,11 @@
       <path value="$PROJECT_DIR$/application/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/application/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/application/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/web-profiler-bundle" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

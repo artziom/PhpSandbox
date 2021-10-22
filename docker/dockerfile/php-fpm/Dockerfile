@@ -12,7 +12,7 @@ RUN pecl install xdebug \
     && echo "xdebug.start_with_request=trigger" >> $PHP_INI_DIR/php.ini
 
 RUN apt-get update && apt-get install -y \
-    zip libxml2-dev \
+    zip libxml2-dev libpq-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -24,7 +24,8 @@ RUN curl -sS https://getcomposer.org/installer | php  \
 
 RUN pecl install \
     apcu \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install \
-    opcache intl pdo_pgsql \
+    opcache intl pgsql pdo_pgsql \
     && docker-php-ext-enable \
     apcu
