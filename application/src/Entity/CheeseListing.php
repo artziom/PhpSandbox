@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=CheeseListingRepository::class)
  */
-#[ApiResource]
+#[ApiResource(collectionOperations: array("get", "post"), itemOperations: array("get" => array("path" => "/i-want-cheese/{id}"), "put", "delete", "patch"), shortName: "cheeses")]
 class CheeseListing
 {
     /**
