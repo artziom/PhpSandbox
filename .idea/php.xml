@@ -92,6 +92,8 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/translation" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
