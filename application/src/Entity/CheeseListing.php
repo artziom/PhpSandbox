@@ -7,11 +7,18 @@ use Carbon\Carbon;
 use DateTimeImmutable;
 use App\Repository\CheeseListingRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CheeseListingRepository::class)
  */
-#[ApiResource(collectionOperations: array("get", "post"), itemOperations: array("get", "put", "delete", "patch"), shortName: "cheeses")]
+#[ApiResource(
+    collectionOperations: array("get", "post"),
+    itemOperations: array("get", "put", "delete", "patch"),
+    shortName: "cheeses",
+    denormalizationContext: array("groups" => array("cheese_listing:write"), "swagger_definition_name" => "Write"),
+    normalizationContext: array("groups" => array("cheese_listing:read"), "swagger_definition_name" => "Read")
+)]
 class CheeseListing
 {
     /**
@@ -24,22 +31,25 @@ class CheeseListing
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
     private $title;
 
     /**
      * @ORM\Column(type="text")
      */
+    #[Groups(array("cheese_listing:read"))]
     private $description;
 
     /**
      * @ORM\Column(type="integer")
      */
+    #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
     private $price;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isPublished;
+    private $isPublished = false;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -74,6 +84,15 @@ class CheeseListing
         return $this->description;
     }
 
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * The description of the cheese as raw text
+     */
+    #[Groups(array("cheese_listing:write"))]
     public function setTextDescription(string $description): self
     {
         $this->description = nl2br($description);
@@ -109,6 +128,11 @@ class CheeseListing
     {
         return $this->createdAt;
     }
+
+    /**
+     * How long ago in text that this cheese listing was added.
+     */
+    #[Groups(array("cheese_listing:read"))]
     public function getCreatedAtAgo(): string
     {
         return Carbon::instance($this->getCreatedAt())->diffForHumans();
