@@ -22,7 +22,10 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
     collectionOperations: array("get", "post"),
     itemOperations: array("get", "put", "delete", "patch"),
     shortName: "cheeses",
-    attributes: array("pagination_items_per_page" => 5),
+    attributes: array(
+        "pagination_items_per_page" => 5,
+        "formats" => array("jsonld", "json", "html", "jsonhal", "csv" => array("text/csv"))
+    ),
     denormalizationContext: array("groups" => array("cheese_listing:write"), "swagger_definition_name" => "Write"),
     normalizationContext: array("groups" => array("cheese_listing:read"), "swagger_definition_name" => "Read")
 )]
