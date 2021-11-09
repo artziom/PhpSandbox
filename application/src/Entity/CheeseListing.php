@@ -14,6 +14,7 @@ use App\Repository\CheeseListingRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CheeseListingRepository::class)
@@ -46,18 +47,23 @@ class CheeseListing
      * @ORM\Column(type="string", length=255)
      */
     #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
+    #[Assert\NotBlank()]
+    #[Assert\Length(array("min" => 2, "max" => 50, "maxMessage" => "Describe your cheese in 50 chars or less"))]
     private $title;
 
     /**
      * @ORM\Column(type="text")
      */
     #[Groups(array("cheese_listing:read"))]
+    #[Assert\NotBlank()]
     private $description;
 
     /**
      * @ORM\Column(type="integer")
      */
     #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
+    #[Assert\NotBlank()]
+    #[Assert\Range(array("min" => 5, "max" => 50))]
     private $price;
 
     /**
