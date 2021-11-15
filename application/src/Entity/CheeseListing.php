@@ -76,6 +76,13 @@ class CheeseListing
      */
     private $createdAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="cheeseListings")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
+    private $owner;
+
     public function __construct(string $title = null)
     {
         $this->createdAt = new DateTimeImmutable();
@@ -98,19 +105,19 @@ class CheeseListing
         return $this->description;
     }
 
-    #[Groups(array("cheese_listing:read"))]
-    public function getShortDescription(): ?string
-    {
-        if(strlen($this->description) < 40){
-            return $this->description;
-        }
-
-        return substr($this->description, 0, 40).'...';
-    }
-
     public function setDescription($description): void
     {
         $this->description = $description;
+    }
+
+    #[Groups(array("cheese_listing:read"))]
+    public function getShortDescription(): ?string
+    {
+        if (strlen($this->description) < 40) {
+            return $this->description;
+        }
+
+        return substr($this->description, 0, 40) . '...';
     }
 
     /**
@@ -149,11 +156,6 @@ class CheeseListing
         return $this;
     }
 
-    public function getCreatedAt(): ?DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
     /**
      * How long ago in text that this cheese listing was added.
      */
@@ -161,5 +163,22 @@ class CheeseListing
     public function getCreatedAtAgo(): string
     {
         return Carbon::instance($this->getCreatedAt())->diffForHumans();
+    }
+
+    public function getCreatedAt(): ?DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function getOwner(): ?User
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(?User $owner): self
+    {
+        $this->owner = $owner;
+
+        return $this;
     }
 }
