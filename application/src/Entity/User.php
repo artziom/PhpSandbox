@@ -55,13 +55,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255, unique=true)
      */
-    #[Groups(array("user:read", "user:write"))]
+    #[Groups(array("user:read", "user:write", "cheese_listing:item:get"))]
     #[Assert\NotBlank]
     private $username;
 
     /**
      * @ORM\OneToMany(targetEntity=CheeseListing::class, mappedBy="owner")
      */
+    #[Groups(array("user:read"))]
     private $cheeseListings;
 
     public function __construct()

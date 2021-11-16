@@ -21,7 +21,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ApiResource(
     collectionOperations: array("get", "post"),
-    itemOperations: array("get", "put", "delete", "patch"),
+    itemOperations: array(
+        "get" => array(
+            "normalization_context" => array("groups" => array("cheese_listing:read", "cheese_listing:item:get") )
+        ),
+        "put", "delete", "patch"),
     shortName: "cheeses",
     attributes: array(
         "pagination_items_per_page" => 5,
@@ -46,7 +50,7 @@ class CheeseListing
     /**
      * @ORM\Column(type="string", length=255)
      */
-    #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
+    #[Groups(array("cheese_listing:read", "cheese_listing:write", "user:read"))]
     #[Assert\NotBlank()]
     #[Assert\Length(array("min" => 2, "max" => 50, "maxMessage" => "Describe your cheese in 50 chars or less"))]
     private $title;
@@ -61,7 +65,7 @@ class CheeseListing
     /**
      * @ORM\Column(type="integer")
      */
-    #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
+    #[Groups(array("cheese_listing:read", "cheese_listing:write", "user:read"))]
     #[Assert\NotBlank()]
     #[Assert\Range(array("min" => 5, "max" => 50))]
     private $price;
