@@ -85,6 +85,7 @@ class CheeseListing
      * @ORM\JoinColumn(nullable=false)
      */
     #[Groups(array("cheese_listing:read", "cheese_listing:write"))]
+    #[Assert\Valid]
     private $owner;
 
     public function __construct(string $title = null)
