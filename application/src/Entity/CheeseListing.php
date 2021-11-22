@@ -50,7 +50,7 @@ class CheeseListing
     /**
      * @ORM\Column(type="string", length=255)
      */
-    #[Groups(array("cheese_listing:read", "cheese_listing:write", "user:read"))]
+    #[Groups(array("cheese_listing:read", "cheese_listing:write", "user:read", "user:write"))]
     #[Assert\NotBlank()]
     #[Assert\Length(array("min" => 2, "max" => 50, "maxMessage" => "Describe your cheese in 50 chars or less"))]
     private $title;
@@ -65,7 +65,7 @@ class CheeseListing
     /**
      * @ORM\Column(type="integer")
      */
-    #[Groups(array("cheese_listing:read", "cheese_listing:write", "user:read"))]
+    #[Groups(array("cheese_listing:read", "cheese_listing:write", "user:read", "user:write"))]
     #[Assert\NotBlank()]
     #[Assert\Range(array("min" => 5, "max" => 50))]
     private $price;
@@ -128,7 +128,7 @@ class CheeseListing
     /**
      * The description of the cheese as raw text
      */
-    #[Groups(array("cheese_listing:write"))]
+    #[Groups(array("cheese_listing:write", "user:write"))]
     #[SerializedName("description")]
     public function setTextDescription(string $description): self
     {
