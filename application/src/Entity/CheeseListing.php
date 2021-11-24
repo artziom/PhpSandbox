@@ -35,7 +35,12 @@ use Symfony\Component\Validator\Constraints as Assert;
     normalizationContext: array("groups" => array("cheese_listing:read"), "swagger_definition_name" => "Read")
 )]
 #[ApiFilter(BooleanFilter::class, properties: array("isPublished"))]
-#[ApiFilter(SearchFilter::class, properties: array("title" => "partial"))]
+#[ApiFilter(SearchFilter::class, properties: array(
+    "title" => "partial",
+    "description" => "partial",
+    "owner" => "exact",
+    "owner.username" => "partial"
+))]
 #[ApiFilter(RangeFilter::class, properties: array("price"))]
 #[ApiFilter(PropertyFilter::class)]
 class CheeseListing

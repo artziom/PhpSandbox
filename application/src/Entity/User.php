@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -12,6 +13,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Serializer\Filter\PropertyFilter;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -21,6 +23,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     denormalizationContext: array("groups" => array("user:write")),
     normalizationContext: array("groups" => array("user:read"))
 )]
+#[ApiFilter(PropertyFilter::class)]
 #[UniqueEntity(fields: array("username"))]
 #[UniqueEntity(fields: array("email"))]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
