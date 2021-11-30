@@ -10,6 +10,8 @@
       <excludeFolder url="file://$MODULE_DIR$/docker" />
       <excludeFolder url="file://$MODULE_DIR$/application/var" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/application/tutorial" />
+      <excludeFolder url="file://$MODULE_DIR$/application/cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

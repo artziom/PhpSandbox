@@ -30,3 +30,12 @@ services:
       - "80:80"
     depends_on:
       - php-fpm
+
+  node:
+    image: node:10
+    volumes:
+      - ./application:/application
+    working_dir: /application
+    depends_on:
+      - webserver
+    command: yarn encore dev --watch

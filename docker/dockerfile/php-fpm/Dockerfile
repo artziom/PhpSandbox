@@ -1,4 +1,4 @@
-FROM php:8.0-fpm
+FROM php:7-fpm
 
 # Set php.ini file
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
