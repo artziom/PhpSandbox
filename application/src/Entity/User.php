@@ -3,44 +3,41 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiFilter;
-use App\Repository\UserRepository;
-use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Serializer\Filter\PropertyFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
-use ApiPlatform\Core\Serializer\Filter\PropertyFilter;
 
 /**
- * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`user`")
+ * @ApiResource(
+ *     normalizationContext={"groups"={"user:read"}},
+ *     denormalizationContext={"groups"={"user:write"}},
+ * )
+ * @ApiFilter(PropertyFilter::class)
+ * @UniqueEntity(fields={"username"})
+ * @UniqueEntity(fields={"email"})
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-#[ApiResource(
-    denormalizationContext: array("groups" => array("user:write")),
-    normalizationContext: array("groups" => array("user:read"))
-)]
-#[ApiFilter(PropertyFilter::class)]
-#[UniqueEntity(fields: array("username"))]
-#[UniqueEntity(fields: array("email"))]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"user:read", "user:write"})
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
-    #[Groups(array("user:read", "user:write"))]
-    #[Assert\NotBlank]
-    #[Assert\Email]
     private $email;
 
     /**
@@ -51,22 +48,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Groups({"user:write"})
      */
-    #[Groups(array("user:write"))]
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @Groups({"user:read", "user:write", "cheese_listing:item:get", "cheese_listing:write"})
+     * @Assert\NotBlank()
      */
-    #[Groups(array("user:read", "user:write", "cheese_listing:item:get", "cheese_listing:write"))]
-    #[Assert\NotBlank]
     private $username;
 
     /**
-     * @ORM\OneToMany(targetEntity=CheeseListing::class, mappedBy="owner", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\CheeseListing", mappedBy="owner", cascade={"persist"}, orphanRemoval=true)
+     * @Groups({"user:read", "user:write"})
+     * @Assert\Valid()
      */
-    #[Groups(array("user:read", "user:write"))]
-    #[Assert\Valid]
     private $cheeseListings;
 
     public function __construct()
@@ -96,21 +93,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *
      * @see UserInterface
      */
-    public function getUserIdentifier(): string
-    {
-        return (string)$this->email;
-    }
-
     public function getUsername(): string
     {
-        return $this->username;
-    }
-
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
+        return (string) $this->username;
     }
 
     /**
@@ -133,11 +118,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @see PasswordAuthenticatedUserInterface
+     * @see UserInterface
      */
     public function getPassword(): string
     {
-        return $this->password;
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
@@ -148,14 +133,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * Returning a salt is only needed, if you are not using a modern
-     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
-     *
      * @see UserInterface
      */
-    public function getSalt(): ?string
+    public function getSalt()
     {
-        return null;
+        // not needed when using the "bcrypt" algorithm in security.yaml
     }
 
     /**
@@ -165,6 +147,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
     }
 
     /**
@@ -187,7 +176,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function removeCheeseListing(CheeseListing $cheeseListing): self
     {
-        if ($this->cheeseListings->removeElement($cheeseListing)) {
+        if ($this->cheeseListings->contains($cheeseListing)) {
+            $this->cheeseListings->removeElement($cheeseListing);
             // set the owning side to null (unless already changed)
             if ($cheeseListing->getOwner() === $this) {
                 $cheeseListing->setOwner(null);
