@@ -82,6 +82,10 @@
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/application/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/application/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/dom-crawler" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
