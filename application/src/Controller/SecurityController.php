@@ -14,7 +14,7 @@ class SecurityController extends AbstractController
      */
     public function login(IriConverterInterface $iriConverter)
     {
-        if(!$this->isGranted('IS_AUTHENTICATED_FULLY')){
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->json([
                 'error' => "Invalid login request: check that the Content-Type header is \"application/json\""
             ], 400);
@@ -23,5 +23,13 @@ class SecurityController extends AbstractController
         return new Response(null, 204, [
             'Location' => $iriConverter->getIriFromItem($this->getUser())
         ]);
+    }
+
+    /**
+     * @Route("/logout", name="app_logout")
+     */
+    public function logout()
+    {
+        throw new \Exception("Should not be reached!");
     }
 }
