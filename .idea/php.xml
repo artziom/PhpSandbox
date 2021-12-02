@@ -112,6 +112,16 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/application/vendor/theofidry/alice-data-fixtures" />
+      <path value="$PROJECT_DIR$/application/vendor/nelmio/alice" />
+      <path value="$PROJECT_DIR$/application/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/application/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/application/vendor/hautelook/alice-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/diff" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
