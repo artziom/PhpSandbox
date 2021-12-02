@@ -20,10 +20,11 @@
         "symfony/expression-language": "4.3.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.3.*",
-        "symfony/webpack-encore-bundle": "^1.6",
+        "symfony/http-client": "4.3.*",
         "symfony/security-bundle": "4.3.*",
         "symfony/twig-bundle": "^4.3",
         "symfony/validator": "4.3.*",
+        "symfony/webpack-encore-bundle": "^1.6",
         "symfony/yaml": "4.3.*"
     },
     "config": {
