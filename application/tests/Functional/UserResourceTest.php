@@ -9,10 +9,11 @@ class UserResourceTest extends CustomApiTestCase
 {
     use ReloadDatabaseTrait;
 
-    public function testCreateUser(){
+    public function testCreateUser()
+    {
         $client = self::createClient();
 
-        $client->request('POST', '/api/users',[
+        $client->request('POST', '/api/users', [
             'json' => [
                 'email' => "cheeseplease@example.com",
                 'username' => 'cheeseplease',
@@ -24,5 +25,20 @@ class UserResourceTest extends CustomApiTestCase
 
         $this->logIn($client, 'cheeseplease@example.com', 'brie');
 
+    }
+
+    public function testUpdateUser()
+    {
+        $client = self::createClient();
+        $user = $this->createUserAndLogIn($client, "admin@foo.pl", "foo");
+
+        $client->request('PUT', '/api/users/'.$user->getId(), [
+           'json' => ['username' => 'newusername']
+        ]);
+
+        $this->assertResponseIsSuccessful();
+        $this->assertJsonContains([
+            'username' => 'newusername'
+        ]);
     }
 }
