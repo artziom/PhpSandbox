@@ -33,17 +33,28 @@ class UserResourceTest extends CustomApiTestCase
         $client = self::createClient();
         $user = $this->createUserAndLogIn($client, "admin@foo.pl", "foo");
 
-        $client->request('PUT', '/api/users/'.$user->getId(), [
-           'json' => ['username' => 'newusername']
+        $client->request('PUT', '/api/users/' . $user->getId(), [
+            'json' => [
+                'username' => 'newusername',
+                'roles' => ['ROLE_ADMIN']
+            ]
         ]);
 
         $this->assertResponseIsSuccessful();
         $this->assertJsonContains([
             'username' => 'newusername'
         ]);
+
+        $em = $this->getEntityManager();
+        /**
+         * @var User $user
+         */
+        $user = $em->getRepository(User::class)->find($user->getId());
+        $this->assertEquals(['ROLE_USER'], $user->getRoles());
     }
 
-    public function testGetUser(){
+    public function testGetUser()
+    {
         $client = self::createClient();
         $user = $this->createUserAndLogIn($client, "admin@foo.pl", "foo");
 
@@ -51,7 +62,7 @@ class UserResourceTest extends CustomApiTestCase
         $em = $this->getEntityManager();
         $em->flush();
 
-        $client->request('GET', '/api/users/'.$user->getId());
+        $client->request('GET', '/api/users/' . $user->getId());
         $this->assertJsonContains([
             'username' => 'admin'
         ]);
@@ -64,7 +75,7 @@ class UserResourceTest extends CustomApiTestCase
         $em->flush();
         $this->logIn($client, 'admin@foo.pl', 'foo');
 
-        $client->request('GET', '/api/users/'.$user->getId());
+        $client->request('GET', '/api/users/' . $user->getId());
         $this->assertJsonContains([
             'phoneNumber' => '555.111.222'
         ]);
