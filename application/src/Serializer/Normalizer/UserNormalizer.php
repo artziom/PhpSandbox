@@ -4,17 +4,16 @@ namespace App\Serializer\Normalizer;
 
 use App\Entity\User;
 use Symfony\Component\Serializer\Normalizer\CacheableSupportsMethodInterface;
+use Symfony\Component\Serializer\Normalizer\ContextAwareNormalizerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
-class UserNormalizer implements NormalizerInterface, CacheableSupportsMethodInterface
+class UserNormalizer implements ContextAwareNormalizerInterface, CacheableSupportsMethodInterface, NormalizerAwareInterface
 {
-    private $normalizer;
-
-    public function __construct(ObjectNormalizer $normalizer)
-    {
-        $this->normalizer = $normalizer;
-    }
+    use NormalizerAwareTrait;
+    private const ALREADY_CALLED = "USER_NORMALIZER_ALREADY_CALLED";
 
     /**
      * @param User $object
@@ -29,6 +28,8 @@ class UserNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
             $context['groups'][] = 'owner:read';
         }
 
+        $context[self::ALREADY_CALLED] = true;
+
         $data = $this->normalizer->normalize($object, $format, $context);
 
         // Here: add, edit, or delete some data
@@ -36,14 +37,18 @@ class UserNormalizer implements NormalizerInterface, CacheableSupportsMethodInte
         return $data;
     }
 
-    public function supportsNormalization($data, $format = null): bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
+        if(isset($context[self::ALREADY_CALLED])){
+            return false;
+        }
+
         return $data instanceof User;
     }
 
     public function hasCacheableSupportsMethod(): bool
     {
-        return true;
+        return false;
     }
 
     private function userIsOwner(User $object):bool
