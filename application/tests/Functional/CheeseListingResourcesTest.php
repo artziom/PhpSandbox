@@ -36,7 +36,7 @@ class CheeseListingResourcesTest extends CustomApiTestCase
             'json' => $cheesyData
         ]);
 
-        $this->assertResponseStatusCodeSame(400, 'missing owner');
+        $this->assertResponseStatusCodeSame(201);
 
 
         $client->request('POST', '/api/cheeses', [
