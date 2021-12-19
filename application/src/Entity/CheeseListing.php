@@ -10,6 +10,8 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Serializer\Filter\PropertyFilter;
 use App\Validator\IsValidOwner;
 use Carbon\Carbon;
+use DateTimeImmutable;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
@@ -112,7 +114,7 @@ class CheeseListing
     public function __construct(string $title = null)
     {
         $this->title = $title;
-        $this->createdAt = new \DateTimeImmutable();
+        $this->createdAt = new DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -130,6 +132,13 @@ class CheeseListing
         return $this->description;
     }
 
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     /**
      * @Groups("cheese:read")
      */
@@ -139,14 +148,7 @@ class CheeseListing
             return $this->description;
         }
 
-        return substr($this->description, 0, 40).'...';
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
+        return substr($this->description, 0, 40) . '...';
     }
 
     /**
@@ -174,11 +176,6 @@ class CheeseListing
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
     /**
      * How long ago in text that this cheese listing was added.
      *
@@ -187,6 +184,11 @@ class CheeseListing
     public function getCreatedAtAgo(): string
     {
         return Carbon::instance($this->getCreatedAt())->diffForHumans();
+    }
+
+    public function getCreatedAt(): ?DateTimeInterface
+    {
+        return $this->createdAt;
     }
 
     public function getIsPublished(): ?bool

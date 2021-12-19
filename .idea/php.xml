@@ -102,6 +102,26 @@
       <path value="$PROJECT_DIR$/application/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/application/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/application/vendor/zenstruck/foundry" />
+      <path value="$PROJECT_DIR$/application/vendor/zenstruck/callback" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

@@ -36,6 +36,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @UniqueEntity(fields={"username"})
  * @UniqueEntity(fields={"email"})
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
 {
@@ -122,7 +123,14 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->username;
+        return (string)$this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
     }
 
     /**
@@ -149,7 +157,7 @@ class User implements UserInterface
      */
     public function getPassword(): string
     {
-        return (string) $this->password;
+        return (string)$this->password;
     }
 
     public function setPassword(string $password): self
@@ -176,13 +184,6 @@ class User implements UserInterface
         $this->plainPassword = null;
     }
 
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
     /**
      * @return Collection|CheeseListing[]
      */
@@ -197,7 +198,7 @@ class User implements UserInterface
      */
     public function getPublishedCheeseListings(): Collection
     {
-        return $this->cheeseListings->filter(function(CheeseListing $cheeseListing) {
+        return $this->cheeseListings->filter(function (CheeseListing $cheeseListing) {
             return $cheeseListing->getIsPublished();
         });
     }
