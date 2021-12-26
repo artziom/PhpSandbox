@@ -9,6 +9,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Serializer\Filter\PropertyFilter;
 use App\Validator\IsValidOwner;
+use App\Validator\ValidIsPublished;
 use Carbon\Carbon;
 use DateTimeImmutable;
 use DateTimeInterface;
@@ -55,6 +56,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiFilter(PropertyFilter::class)
  * @ORM\Entity(repositoryClass="App\Repository\CheeseListingRepository")
  * @ORM\EntityListeners({"App\Doctrine\CheeseListingSetOwnerListener"})
+ * @ValidIsPublished()
  */
 class CheeseListing
 {
