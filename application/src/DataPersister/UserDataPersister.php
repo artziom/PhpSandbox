@@ -8,18 +8,21 @@ use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Security;
 
 class UserDataPersister implements ContextAwareDataPersisterInterface
 {
     private $decoratedDataPersister;
     private $userPasswordEncoder;
     private LoggerInterface $logger;
+    private Security $security;
 
-    public function __construct(DataPersisterInterface $decoratedDataPersister, UserPasswordEncoderInterface $userPasswordEncoder, LoggerInterface $logger)
+    public function __construct(DataPersisterInterface $decoratedDataPersister, UserPasswordEncoderInterface $userPasswordEncoder, LoggerInterface $logger, Security $security)
     {
         $this->decoratedDataPersister = $decoratedDataPersister;
         $this->userPasswordEncoder = $userPasswordEncoder;
         $this->logger = $logger;
+        $this->security = $security;
     }
 
     public function supports($data, array $context = []): bool
@@ -37,7 +40,6 @@ class UserDataPersister implements ContextAwareDataPersisterInterface
         }
 
         if(!$data->getId()){
-            //
             $this->logger->info(sprintf('User %s just registered! Eureka!', $data->getEmail()));
         }
 
@@ -47,6 +49,8 @@ class UserDataPersister implements ContextAwareDataPersisterInterface
             );
             $data->eraseCredentials();
         }
+
+        $data->setIsMe($this->security->getUser() === $data);
 
         $this->decoratedDataPersister->persist($data);
     }
