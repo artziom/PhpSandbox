@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Doctrine\UserSetIsMvpListener;
 
 /**
  * @ApiResource(
@@ -36,6 +37,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @UniqueEntity(fields={"username"})
  * @UniqueEntity(fields={"email"})
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\EntityListeners({UserSetIsMvpListener::class})
  * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
@@ -100,6 +102,13 @@ class User implements UserInterface
      * @Groups({"user:read"})
      */
     private $isMe = false;
+
+    /**
+     * Retuns true if this user is a MVP
+     *
+     * @Groups({"user:read"})
+     */
+    private $isMvp = false;
 
     public function __construct()
     {
@@ -271,5 +280,21 @@ class User implements UserInterface
     public function setIsMe(bool $isMe): void
     {
         $this->isMe = $isMe;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsMvp(): bool
+    {
+        return $this->isMvp;
+    }
+
+    /**
+     * @param bool $isMvp
+     */
+    public function setIsMvp(bool $isMvp): void
+    {
+        $this->isMvp = $isMvp;
     }
 }
