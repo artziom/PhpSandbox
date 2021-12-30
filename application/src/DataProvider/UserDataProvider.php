@@ -24,7 +24,7 @@ class UserDataProvider implements ContextAwareCollectionDataProviderInterface, R
         $this->itemDataProvider = $itemDataProvider;
     }
 
-    public function getCollection(string $resourceClass, string $operationName = null, array $context = []): array
+    public function getCollection(string $resourceClass, string $operationName = null, array $context = [])
     {
         /**
          * @var User[] $users
@@ -33,7 +33,8 @@ class UserDataProvider implements ContextAwareCollectionDataProviderInterface, R
 
         $currentUser = $this->security->getUser();
         foreach ($users as $user) {
-            $user->setIsMe($currentUser === $user);
+            // now handled in listener
+//            $user->setIsMe($currentUser === $user);
         }
 
         return $users;
@@ -53,7 +54,8 @@ class UserDataProvider implements ContextAwareCollectionDataProviderInterface, R
             return null;
         }
 
-        $item->setIsMe($this->security->getUser() === $item);
+        // Now handled in listener
+//        $item->setIsMe($this->security->getUser() === $item);
 
         return $item;
     }
