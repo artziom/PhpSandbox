@@ -9,11 +9,9 @@ use DateTime;
 
 class DailyStatsProvider implements CollectionDataProviderInterface, RestrictedDataProviderInterface
 {
-    public function getCollection(string $resourceClass, string $operationName = null)
+    public function getCollection(string $resourceClass, string $operationName = null): array
     {
-        $stats = new DailyStats();
-        $stats->date = new DateTime();
-        $stats->totalVisitors = 100;
+        $stats = new DailyStats(new DateTime(), 100, []);
 
         return [$stats];
     }
