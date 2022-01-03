@@ -5,7 +5,6 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
-use ApiPlatform\Core\Action\NotFoundAction;
 use DateTimeInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -13,12 +12,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  * @ApiResource(
  *  normalizationContext={"groups"={"daily-stats:read"}},
  *  itemOperations={
- *      "get"={
- *          "method"="GET",
- *          "controller"=NotFoundAction::class,
- *          "read"=false,
- *          "output"=false
- *      },
+ *      "get"
  *  },
  *  collectionOperations={"get"}
  * )
