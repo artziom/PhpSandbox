@@ -38,13 +38,11 @@ class DailyStats
     /**
      * The 5 most popular cheese listings from this date!
      *
+     * @var CheeseListing[]
      * @Groups({"daily-stats:read"})
      */
     public $mostPopularListings;
 
-    /**
-     * @param CheeseListing[] $mostPopularListings
-     */
     public function __construct(DateTimeInterface $date, int $totalVisitors, array $mostPopularListings)
     {
         $this->date = $date;
