@@ -4,37 +4,36 @@ namespace App\DataProvider;
 
 use ApiPlatform\Core\DataProvider\PaginatorInterface;
 use App\Service\StatsHelper;
-use Exception;
-use Traversable;
+use ArrayIterator;
+use IteratorAggregate;
 
-class DailyStatsPaginator implements PaginatorInterface, \IteratorAggregate
+class DailyStatsPaginator implements PaginatorInterface, IteratorAggregate
 {
     private $dailyStatsIterator;
     private StatsHelper $statsHelper;
+    private int $currentPage;
+    private int $maxResults;
 
-    public function __construct(StatsHelper $statsHelper)
+    public function __construct(StatsHelper $statsHelper, int $currentPage, int $maxResults)
     {
         $this->statsHelper = $statsHelper;
+        $this->currentPage = $currentPage;
+        $this->maxResults = $maxResults;
     }
 
     public function getLastPage(): float
     {
-        return 2;
+        return ceil($this->getTotalItems() / $this->getItemsPerPage()) ?: 1.;
     }
 
     public function getTotalItems(): float
     {
-        return 25;
-    }
-
-    public function getCurrentPage(): float
-    {
-        return 1;
+        return $this->statsHelper->count();
     }
 
     public function getItemsPerPage(): float
     {
-        return 10;
+        return $this->maxResults;
     }
 
     public function count()
@@ -44,10 +43,22 @@ class DailyStatsPaginator implements PaginatorInterface, \IteratorAggregate
 
     public function getIterator()
     {
-        if($this->dailyStatsIterator === null){
-            $this->dailyStatsIterator = new \ArrayIterator($this->statsHelper->fetchMany());
+        if ($this->dailyStatsIterator === null) {
+            $offset = ($this->getCurrentPage() - 1) * $this->getItemsPerPage();
+
+            $this->dailyStatsIterator = new ArrayIterator(
+                $this->statsHelper->fetchMany(
+                    $this->getItemsPerPage(),
+                    $offset
+                )
+            );
         }
 
         return $this->dailyStatsIterator;
+    }
+
+    public function getCurrentPage(): float
+    {
+        return $this->currentPage;
     }
 }
