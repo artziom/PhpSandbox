@@ -18,9 +18,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\ApiPlatform\CheeseSearchFilter;
+use App\Dto\CheeseListingOutput;
 
 /**
  * @ApiResource(
+ *     output=CheeseListingOutput::class,
  *     normalizationContext={"groups"={"cheese:read"}},
  *     denormalizationContext={"groups"={"cheese:write"}},
  *     itemOperations={
