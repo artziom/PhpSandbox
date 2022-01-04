@@ -5,9 +5,21 @@ namespace App\ApiPlatform;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\AbstractFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\QueryNameGeneratorInterface;
 use Doctrine\ORM\QueryBuilder;
+use Doctrine\Persistence\ManagerRegistry;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 
 class CheeseSearchFilter extends AbstractFilter
 {
+    private bool $useLike;
+
+    public function __construct(ManagerRegistry $managerRegistry, bool $useLike = false, ?RequestStack $requestStack = null, NameConverterInterface $nameConverter = null)
+    {
+        parent::__construct($managerRegistry, $requestStack, null, null, $nameConverter);
+        $this->useLike = $useLike;
+    }
+
     protected function filterProperty(string $property, $value, QueryBuilder $queryBuilder, QueryNameGeneratorInterface $queryNameGenerator, string $resourceClass, string $operationName = null)
     {
         if($property !== 'search'){

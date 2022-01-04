@@ -53,7 +53,7 @@ use App\ApiPlatform\CheeseSearchFilter;
  *     "owner": "exact",
  *     "owner.username": "partial"
  * })
- * @ApiFilter(CheeseSearchFilter::class)
+ * @ApiFilter(CheeseSearchFilter::class, arguments={"useLike"=true})
  * @ApiFilter(RangeFilter::class, properties={"price"})
  * @ApiFilter(PropertyFilter::class)
  * @ORM\Entity(repositoryClass="App\Repository\CheeseListingRepository")
