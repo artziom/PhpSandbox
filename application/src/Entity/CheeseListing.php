@@ -17,6 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\ApiPlatform\CheeseSearchFilter;
 
 /**
  * @ApiResource(
@@ -52,6 +53,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     "owner": "exact",
  *     "owner.username": "partial"
  * })
+ * @ApiFilter(CheeseSearchFilter::class)
  * @ApiFilter(RangeFilter::class, properties={"price"})
  * @ApiFilter(PropertyFilter::class)
  * @ORM\Entity(repositoryClass="App\Repository\CheeseListingRepository")
