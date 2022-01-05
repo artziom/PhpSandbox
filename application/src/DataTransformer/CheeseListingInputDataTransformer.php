@@ -14,14 +14,9 @@ class CheeseListingInputDataTransformer implements DataTransformerInterface
      */
     public function transform($input, string $to, array $context = [])
     {
-        $cheeseListing = $context[AbstractNormalizer::OBJECT_TO_POPULATE] ?? new CheeseListing($input->title);
+        $cheeseListing = $context[AbstractNormalizer::OBJECT_TO_POPULATE] ?? null;
 
-        $cheeseListing->setDescription($input->description);
-        $cheeseListing->setPrice($input->price);
-        $cheeseListing->setOwner($input->owner);
-        $cheeseListing->setIsPublished($input->isPublished);
-
-        return $cheeseListing;
+        return $input->createOrUpdateEntity($cheeseListing);
     }
 
     public function supportsTransformation($data, string $to, array $context = []): bool
