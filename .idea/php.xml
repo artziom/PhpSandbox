@@ -101,6 +101,7 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/application/vendor/composer" />
       <path value="$PROJECT_DIR$/application/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/debug-bundle" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

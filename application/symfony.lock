@@ -209,6 +209,18 @@
     "symfony/css-selector": {
         "version": "v4.3.3"
     },
+    "symfony/debug-bundle": {
+        "version": "5.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "0ce7a032d344fb7b661cd25d31914cd703ad445b"
+        },
+        "files": [
+            "config/packages/dev/debug.yaml"
+        ]
+    },
     "symfony/dependency-injection": {
         "version": "v4.2.8"
     },
@@ -334,19 +346,16 @@
         "version": "v1.18.1"
     },
     "symfony/polyfill-intl-normalizer": {
-        "version": "v1.18.1"
-    },
-    "symfony/polyfill-intl-normalizer": {
         "version": "v1.23.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.11.0"
     },
-    "symfony/polyfill-php80": {
-        "version": "v1.18.1"
-    },
     "symfony/polyfill-php73": {
         "version": "v1.23.0"
+    },
+    "symfony/polyfill-php80": {
+        "version": "v1.18.1"
     },
     "symfony/profiler-pack": {
         "version": "v1.0.4"
