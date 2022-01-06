@@ -37,7 +37,8 @@ class CheeseListingOutput
      */
     public $owner;
 
-    public static function createFromEntity(CheeseListing $cheeseListing):self{
+    public static function createFromEntity(CheeseListing $cheeseListing): self
+    {
         $output = new CheeseListingOutput();
         $output->title = $cheeseListing->getTitle();
         $output->description = $cheeseListing->getDescription();

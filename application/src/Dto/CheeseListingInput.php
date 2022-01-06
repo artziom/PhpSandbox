@@ -20,9 +20,10 @@ class CheeseListingInput
     public int $price;
 
     /**
+     * @var User
      * @Groups({"cheese:collection:post"})
      */
-    public User $owner;
+    public $owner;
 
     /**
      * @Groups({"cheese:write"})
@@ -31,7 +32,8 @@ class CheeseListingInput
 
     public $description;
 
-    public static function createFromEntity(?CheeseListing $cheeseListing):self{
+    public static function createFromEntity(?CheeseListing $cheeseListing): self
+    {
         $dto = new CheeseListingInput();
         // not an edit, so just return an empty DTO
         if (!$cheeseListing) {
@@ -42,14 +44,14 @@ class CheeseListingInput
         $dto->price = $cheeseListing->getPrice();
         $dto->description = $cheeseListing->getDescription();
         $dto->owner = $cheeseListing->getOwner();
-        $dto->isPublished = $cheeseListing>getIsPublished();
+        $dto->isPublished = $cheeseListing->getIsPublished();
 
         return $dto;
     }
 
     public function createOrUpdateEntity(?CheeseListing $cheeseListing): CheeseListing
     {
-        if(!$cheeseListing){
+        if (!$cheeseListing) {
             $cheeseListing = new CheeseListing($this->title);
         }
 
