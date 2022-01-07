@@ -5,7 +5,6 @@ namespace App\Validator;
 use App\Entity\CheeseListing;
 use Doctrine\ORM\EntityManagerInterface;
 use LogicException;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -37,7 +36,7 @@ class ValidIsPublishedValidator extends ConstraintValidator
         }
 
         if ($value->getIsPublished()) {
-            if (strlen($value->getDescription() < 100) && !$this->security->isGranted('ROLE_ADMIN')) {
+            if (strlen($value->getDescription()) < 100 && !$this->security->isGranted('ROLE_ADMIN')) {
                 $this->context->buildViolation("Cannot publish: description is too short!")
                     ->atPath('description')
                     ->addViolation();
@@ -46,7 +45,7 @@ class ValidIsPublishedValidator extends ConstraintValidator
             return;
         }
 
-        if(!$this->security->isGranted('ROLE_ADMIN')){
+        if (!$this->security->isGranted('ROLE_ADMIN')) {
 //            throw new AccessDeniedException("Only admin users can unpublish!");
             $this->context->buildViolation("Only admin users can unpublish")
                 ->addViolation();
