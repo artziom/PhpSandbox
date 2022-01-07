@@ -122,6 +122,11 @@
       <path value="$PROJECT_DIR$/application/vendor/theofidry/alice-data-fixtures" />
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/application/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/application/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/application/vendor/ramsey/uuid-doctrine" />
+      <path value="$PROJECT_DIR$/application/vendor/brick/math" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
