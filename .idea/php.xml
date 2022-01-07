@@ -102,6 +102,26 @@
       <path value="$PROJECT_DIR$/application/vendor/composer" />
       <path value="$PROJECT_DIR$/application/vendor/api-platform/core" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor" />
+      <path value="$PROJECT_DIR$/application/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/application/vendor/nelmio/alice" />
+      <path value="$PROJECT_DIR$/application/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/application/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/application/vendor/hautelook/alice-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/application/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/application/vendor/theofidry/alice-data-fixtures" />
+      <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-code" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
