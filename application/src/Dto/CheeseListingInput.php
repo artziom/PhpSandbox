@@ -4,14 +4,21 @@ namespace App\Dto;
 
 use App\Entity\CheeseListing;
 use App\Entity\User;
+use App\Validator\IsValidOwner;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\SerializedName;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class CheeseListingInput
 {
     /**
-     * @var string
-     *
+     * @var string     *
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *     min=2,
+     *     max=50,
+     *     maxMessage="Describe your cheese in 50 chars or less"
+     * )
      * @Groups({"cheese:write", "user:write"})
      */
     public $title;
@@ -20,12 +27,14 @@ class CheeseListingInput
      * @var int
      *
      * @Groups({"cheese:write", "user:write"})
+     * @Assert\NotBlank()
      */
     public $price;
 
     /**
      * @var User
      * @Groups({"cheese:collection:post"})
+     * @IsValidOwner()
      */
     public $owner;
 
@@ -34,7 +43,10 @@ class CheeseListingInput
      */
     public bool $isPublished = false;
 
-    /** @var string */
+    /**
+     * @Assert\NotBlank()
+     * @var string
+     */
     public $description;
 
     public static function createFromEntity(?CheeseListing $cheeseListing): self
@@ -57,11 +69,11 @@ class CheeseListingInput
     public function createOrUpdateEntity(?CheeseListing $cheeseListing): CheeseListing
     {
         if (!$cheeseListing) {
-            $cheeseListing = new CheeseListing((string) $this->title);
+            $cheeseListing = new CheeseListing($this->title);
         }
 
-        $cheeseListing->setDescription((string) $this->description);
-        $cheeseListing->setPrice((int) $this->price);
+        $cheeseListing->setDescription($this->description);
+        $cheeseListing->setPrice($this->price);
         $cheeseListing->setOwner($this->owner);
         $cheeseListing->setIsPublished($this->isPublished);
 
