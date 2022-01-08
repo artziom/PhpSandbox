@@ -21,6 +21,9 @@ RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sour
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN git config --global user.email "you@example.com" \
+    && git config --global user.name "Your Name"
+
 #RUN pecl install \
 #    apcu \
 #    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
