@@ -4,23 +4,22 @@ FROM php:8.0-fpm
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
     && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini
 
+# Install composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
 # Install xdebug
-#RUN pecl install xdebug \
-#	&& docker-php-ext-enable xdebug \
-#    && echo "xdebug.client_host=host.docker.internal" >> $PHP_INI_DIR/php.ini \
-#    && echo "xdebug.mode=debug" >> $PHP_INI_DIR/php.ini \
-#    && echo "xdebug.start_with_request=trigger" >> $PHP_INI_DIR/php.ini
+RUN pecl install xdebug \
+	&& docker-php-ext-enable xdebug \
+    && echo "xdebug.client_host=host.docker.internal" >> $PHP_INI_DIR/php.ini \
+    && echo "xdebug.mode=debug" >> $PHP_INI_DIR/php.ini \
+    && echo "xdebug.start_with_request=trigger" >> $PHP_INI_DIR/php.ini
 
-#RUN apt-get update && apt-get install -y \
+RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list \
+    && apt-get update && apt-get install -y \
+    symfony-cli \
 #    zip libxml2-dev libpq-dev \
-#    && apt-get clean \
-#    && rm -rf /var/lib/apt/lists/*
-
-# Install composer && symfony
-#RUN curl -sS https://getcomposer.org/installer | php  \
-#    && mv composer.phar /usr/local/bin/composer \
-#    && curl -sS https://get.symfony.com/cli/installer | bash \
-#    && mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 #RUN pecl install \
 #    apcu \
