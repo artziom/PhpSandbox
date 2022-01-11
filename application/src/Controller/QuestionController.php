@@ -2,15 +2,16 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class QuestionController
+class QuestionController extends AbstractController
 {
     #[Route("/")]
     public function homepage(): Response
     {
-        return new Response('Hello World!');
+        return $this->render("base.html.twig");
     }
 
     #[Route("/questions/{slug}")]

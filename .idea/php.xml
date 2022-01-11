@@ -13,7 +13,6 @@
       <path value="$PROJECT_DIR$/application/vendor/zenstruck/callback" />
       <path value="$PROJECT_DIR$/application/vendor/zenstruck/foundry" />
       <path value="$PROJECT_DIR$/application/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/application/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-code" />
@@ -41,7 +40,6 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/psr/cache" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/application/vendor/psr/log" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/framework-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/psr/link" />
@@ -67,7 +65,6 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/web-profiler-bundle" />
@@ -75,7 +72,6 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/browser-kit" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/serializer" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/yaml" />
@@ -109,6 +105,11 @@
       <path value="$PROJECT_DIR$/application/vendor/ramsey/uuid-doctrine" />
       <path value="$PROJECT_DIR$/application/vendor/brick/math" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/application/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/twig-bundle" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
