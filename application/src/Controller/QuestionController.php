@@ -8,7 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController
 {
     #[Route("/")]
-    public function homepage(){
+    public function homepage(): Response
+    {
         return new Response('Hello World!');
     }
 }
