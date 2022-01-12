@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CommentController extends AbstractController
 {
-    #[Route("/comments/{id}/vote/{direction}", name: "")]
+    #[Route("/comments/{id}/vote/{direction<up|down>}", methods: "POST")]
     public function commentVote($id, $direction): Response
     {
         if ($direction === 'up') {
