@@ -11,14 +11,21 @@ class QuestionController extends AbstractController
     #[Route("/")]
     public function homepage(): Response
     {
-        return $this->render("base.html.twig");
+        return new Response("Hello World");
     }
 
     #[Route("/questions/{slug}")]
     public function show($slug): Response
     {
-        return new Response(sprintf("Future page to show a question \"%s\"!",
-            ucwords(str_replace("-", " ", $slug))
-        ));
+        $answers = [
+            "Turn off and turn on",
+            "Use Google",
+            "But why?"
+        ];
+
+        return $this->render("question/show.html.twig", [
+            'question' => ucwords(str_replace("-", " ", $slug)),
+            'answers' => $answers
+        ]);
     }
 }
