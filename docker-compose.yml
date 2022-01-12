@@ -37,7 +37,7 @@ services:
       - php-fpm
 
   node:
-    image: node:10
+    image: node:12
     volumes:
       - ./application:/application
     working_dir: /application
