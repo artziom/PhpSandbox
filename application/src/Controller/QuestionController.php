@@ -11,7 +11,7 @@ class QuestionController extends AbstractController
     #[Route("/")]
     public function homepage(): Response
     {
-        return new Response("Hello World");
+        return $this->render('question/homepage.html.twig');
     }
 
     #[Route("/questions/{slug}")]
@@ -22,8 +22,6 @@ class QuestionController extends AbstractController
             "Use Google",
             "But why?"
         ];
-
-        dump($slug, $this);
 
         return $this->render("question/show.html.twig", [
             'question' => ucwords(str_replace("-", " ", $slug)),
