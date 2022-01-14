@@ -17,17 +17,20 @@ RUN pecl install xdebug \
 RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list \
     && apt-get update && apt-get install -y \
     symfony-cli \
-#    zip libxml2-dev libpq-dev \
+    zip libxml2-dev libpq-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git config --global user.email "you@example.com" \
-    && git config --global user.name "Your Name"
+# Install APCU, OPCACHE, INTL
+RUN pecl install apcu \
+    && docker-php-ext-install opcache intl \
+    && docker-php-ext-enable apcu
 
-#RUN pecl install \
-#    apcu \
-#    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-#    && docker-php-ext-install \
-#    opcache intl pgsql pdo_pgsql \
-#    && docker-php-ext-enable \
-#    apcu
+# Install database extensions
+RUN docker-php-ext-install pdo_mysql
+
+# Git default configuration
+ARG USER_NAME
+ARG USER_EMAIL
+RUN git config --global user.email $USER_NAME \
+    && git config --global user.name $USER_EMAIL

@@ -14,9 +14,13 @@ services:
       - docker/env/project.env
 
   php-fpm:
-    build: docker/dockerfile/php-fpm
     env_file:
       - docker/env/project.env
+    build:
+      context: docker/dockerfile/php-fpm
+      args:
+        USER_NAME: "Your Name"
+        USER_EMAIL: "you@example.com"
     volumes:
       - ./application:/application
     working_dir: /application

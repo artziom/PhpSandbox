@@ -110,6 +110,28 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/application/vendor/michelf/php-markdown" />
+      <path value="$PROJECT_DIR$/application/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/knplabs/knp-markdown-bundle" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -179,7 +201,7 @@
       </interpreter>
     </phpInfoCache>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/application/vendor/autoload.php" />
