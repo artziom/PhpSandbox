@@ -22,7 +22,6 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/cache" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/security-core" />
@@ -72,7 +71,6 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/browser-kit" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/serializer" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/asset" />
@@ -99,12 +97,10 @@
       <path value="$PROJECT_DIR$/application/vendor/theofidry/alice-data-fixtures" />
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/application/vendor/zendframework/zend-code" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-php81" />
       <path value="$PROJECT_DIR$/application/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/application/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/application/vendor/ramsey/uuid-doctrine" />
       <path value="$PROJECT_DIR$/application/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/runtime" />
       <path value="$PROJECT_DIR$/application/vendor/twig/extra-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/translation-contracts" />
