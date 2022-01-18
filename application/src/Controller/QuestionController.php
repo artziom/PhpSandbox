@@ -81,7 +81,7 @@ EOF
 
 
         $question = $repository->findOneBy(['slug' => $slug]);
-        if(!$question){
+        if (!$question) {
             throw $this->createNotFoundException(sprintf('No question found for %s', $slug));
         }
 
