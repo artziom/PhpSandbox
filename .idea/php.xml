@@ -81,10 +81,8 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/debug-bundle" />
       <path value="$PROJECT_DIR$/application/vendor" />
       <path value="$PROJECT_DIR$/application/vendor/jdorn/sql-formatter" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/application/vendor/nelmio/alice" />
       <path value="$PROJECT_DIR$/application/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/contracts" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/debug" />
@@ -152,6 +150,9 @@
       <path value="$PROJECT_DIR$/application/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/application/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/application/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/proxy-manager-bridge" />
+      <path value="$PROJECT_DIR$/application/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
