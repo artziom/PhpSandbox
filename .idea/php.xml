@@ -128,7 +128,6 @@
       <path value="$PROJECT_DIR$/application/vendor/knplabs/knp-markdown-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-php81" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/runtime" />
       <path value="$PROJECT_DIR$/application/vendor/php-http/client-common" />
       <path value="$PROJECT_DIR$/application/vendor/php-http/message" />
@@ -150,9 +149,9 @@
       <path value="$PROJECT_DIR$/application/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/application/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/application/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/application/vendor/symfony/password-hasher" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/proxy-manager-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/application/vendor/knplabs/knp-time-bundle" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
