@@ -2,13 +2,6 @@ version: "3.9"
 
 services:
   database:
-    image: postgres
-    env_file:
-      - docker/env/project.env
-    ports:
-      - "5432:5432"
-
-  database-mariadb:
     image: mariadb
     env_file:
       - docker/env/project.env
@@ -25,7 +18,7 @@ services:
       - ./application:/application
     working_dir: /application
     depends_on:
-      - database-mariadb
+      - database
 
   webserver:
     image: nginx
@@ -45,5 +38,3 @@ services:
     volumes:
       - ./application:/application
     working_dir: /application
-    depends_on:
-      - webserver
