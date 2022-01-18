@@ -5,6 +5,8 @@ services:
     image: mariadb
     env_file:
       - docker/env/project.env
+    ports:
+      - "3306:3306"
 
   php-fpm:
     env_file:
