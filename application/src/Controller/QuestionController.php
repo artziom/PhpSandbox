@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Question;
 use App\Repository\QuestionRepository;
-use App\Service\MarkdownHelper;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -58,7 +58,7 @@ EOF
             $question->setAskedAt(new DateTimeImmutable(sprintf('-%d days', rand(1, 100))));
         }
 
-        $question->setVotes(rand(-20,50));
+        $question->setVotes(rand(-20, 50));
 
         $entityManager->persist($question);
         $entityManager->flush();
@@ -89,5 +89,21 @@ EOF
             'question' => $question,
             'answers' => $answers,
         ]);
+    }
+
+    /**
+     * @Route("/questions/{slug}/vote", name="app_question_vote", methods="POST")
+     */
+    public function questionVote(Question $question, Request $request): Response
+    {
+        $direction = $request->request->get('direction');
+
+        if ($direction === 'up') {
+            $question->setVotes($question->getVotes() + 1);
+        } else if ($direction === 'down') {
+            $question->setVotes($question->getVotes() - 1);
+        }
+
+        dd($question);
     }
 }
