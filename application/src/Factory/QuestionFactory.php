@@ -4,6 +4,8 @@ namespace App\Factory;
 
 use App\Entity\Question;
 use App\Repository\QuestionRepository;
+use DateTimeImmutable;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
@@ -35,15 +37,27 @@ final class QuestionFactory extends ModelFactory
         // TODO inject services if required (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#factories-as-services)
     }
 
+    protected static function getClass(): string
+    {
+        return Question::class;
+    }
+
+    public function unpublished(): self
+    {
+        return $this->addState(['askedAt' => null]);
+    }
+
     protected function getDefaults(): array
     {
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
-            'name' => self::faker()->text(),
-            'slug' => self::faker()->slug(),
-            'question' => self::faker()->text(),
-            'askedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTimeThisMonth()),
-            'votes' => self::faker()->randomNumber(),
+            'name' => self::faker()->realText(50),
+            'question' => self::faker()->paragraphs(
+                self::faker()->numberBetween(1, 4),
+                true
+            ),
+            'askedAt' => DateTimeImmutable::createFromMutable(self::faker()->dateTimeBetween('-100 days', '-1 minute')),
+            'votes' => self::faker()->numberBetween(-20, 20),
         ];
     }
 
@@ -51,12 +65,11 @@ final class QuestionFactory extends ModelFactory
     {
         // see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization
         return $this
-            // ->afterInstantiate(function(Question $question): void {})
-        ;
-    }
-
-    protected static function getClass(): string
-    {
-        return Question::class;
+            ->afterInstantiate(function (Question $question): void {
+                if (!$question->getSlug()) {
+                    $slugger = new AsciiSlugger();
+                    $question->setSlug($slugger->slug($question->getName()));
+                }
+            });
     }
 }
