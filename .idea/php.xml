@@ -152,6 +152,11 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/proxy-manager-bridge" />
       <path value="$PROJECT_DIR$/application/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/application/vendor/knplabs/knp-time-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/application/vendor/zenstruck/assert" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
