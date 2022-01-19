@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "clue/stream-filter": {
         "version": "v1.4.1"
     },
@@ -106,6 +109,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "gedmo/doctrine-extensions": {
+        "version": "v3.5.0"
+    },
     "guzzlehttp/promises": {
         "version": "v1.3.1"
     },
@@ -212,6 +218,18 @@
         },
         "files": [
             "config/packages/sentry.yaml"
+        ]
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
+        },
+        "files": [
+            "config/packages/stof_doctrine_extensions.yaml"
         ]
     },
     "symfony/asset": {
@@ -352,6 +370,9 @@
     },
     "symfony/options-resolver": {
         "version": "v5.0.7"
+    },
+    "symfony/password-hasher": {
+        "version": "v5.4.2"
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.17.1"
