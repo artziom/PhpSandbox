@@ -94,16 +94,18 @@ EOF
     /**
      * @Route("/questions/{slug}/vote", name="app_question_vote", methods="POST")
      */
-    public function questionVote(Question $question, Request $request): Response
+    public function questionVote(Question $question, Request $request, EntityManagerInterface $entityManager): Response
     {
         $direction = $request->request->get('direction');
 
         if ($direction === 'up') {
-            $question->setVotes($question->getVotes() + 1);
+            $question->upVote();
         } else if ($direction === 'down') {
-            $question->setVotes($question->getVotes() - 1);
+            $question->downVote();
         }
 
-        dd($question);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_question_show', ['slug' => $question->getSlug()]);
     }
 }
