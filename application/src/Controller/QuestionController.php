@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Question;
 use App\Repository\QuestionRepository;
-use App\Service\MarkdownHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -53,11 +52,7 @@ class QuestionController extends AbstractController
             $this->logger->info('We are in debug mode!');
         }
 
-        $answers = [
-            'Make sure your cat is sitting `purrrfectly` still 🤣',
-            'Honestly, I like furry shoes better than MY cat',
-            'Maybe... try saying the spell backwards?',
-        ];
+        $answers = $question->getAnswers();
 
         return $this->render('question/show.html.twig', [
             'question' => $question,
