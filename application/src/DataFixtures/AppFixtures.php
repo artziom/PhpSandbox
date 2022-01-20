@@ -11,14 +11,18 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        QuestionFactory::createMany(20);
+        $question = QuestionFactory::createMany(20);
 
         QuestionFactory::new()
             ->unpublished()
             ->many(5)
             ->create();
 
-        AnswerFactory::createMany(100);
+        AnswerFactory::createMany(100, function () use ($question) {
+            return [
+                'question' =>  $question[array_rand($question)]
+            ];
+        });
 
         $manager->flush();
     }
