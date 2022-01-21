@@ -37,4 +37,17 @@ class AnswerRepository extends ServiceEntityRepository
     {
         return Criteria::create()->andWhere(Criteria::expr()->eq('status', Answer::STATUS_APPROVED));
     }
+
+    /**
+     * @return Answer[]
+     */
+    public function findMostPupular(): array
+    {
+        return $this->createQueryBuilder('answer')
+            ->addCriteria(self::createApprovedCriteria())
+            ->orderBy('answer.votes', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
 }
