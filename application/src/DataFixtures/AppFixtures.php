@@ -24,6 +24,12 @@ class AppFixtures extends Fixture
             ];
         });
 
+        AnswerFactory::new(function () use ($question) {
+            return [
+                'question' =>  $question[array_rand($question)]
+            ];
+        })->needsApproval()->many(20)->create();
+
         $manager->flush();
     }
 }
