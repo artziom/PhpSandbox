@@ -163,6 +163,7 @@
       <path value="$PROJECT_DIR$/application/vendor/twig/string-extra" />
       <path value="$PROJECT_DIR$/application/vendor/babdev/pagerfanta-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/core" />
+      <path value="$PROJECT_DIR$/application/vendor/pagerfanta/doctrine-orm-adapter" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
