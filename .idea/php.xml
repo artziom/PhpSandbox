@@ -164,6 +164,7 @@
       <path value="$PROJECT_DIR$/application/vendor/babdev/pagerfanta-bundle" />
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/core" />
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/doctrine-orm-adapter" />
+      <path value="$PROJECT_DIR$/application/vendor/pagerfanta/twig" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
