@@ -16,14 +16,13 @@ class AppFixtures extends Fixture
     {
         TagFactory::createMany(100);
 
-        QuestionTagFactory::createMany(10);
+        $question = QuestionFactory::createMany(20);
 
-        return;
-
-        $question = QuestionFactory::createMany(20, function () {
-            return [
-                'tags' => TagFactory::randomRange(0, 5)
-            ];
+        QuestionTagFactory::createMany(100, function (){
+           return [
+               'tag' => TagFactory::random(),
+               'question' => QuestionFactory::random()
+           ];
         });
 
         QuestionFactory::new()
