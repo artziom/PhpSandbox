@@ -165,6 +165,7 @@
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/core" />
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/doctrine-orm-adapter" />
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/twig" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/ux-chartjs" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
