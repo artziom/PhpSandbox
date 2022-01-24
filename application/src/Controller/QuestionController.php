@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Pagerfanta\Doctrine\ORM\QueryAdapter;
 use Pagerfanta\Pagerfanta;
 use Psr\Log\LoggerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,8 +18,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuestionController extends AbstractController
 {
-    private $logger;
-    private $isDebug;
+    private LoggerInterface $logger;
+    private bool $isDebug;
 
     public function __construct(LoggerInterface $logger, bool $isDebug)
     {
@@ -46,6 +47,7 @@ class QuestionController extends AbstractController
     /**
      * @Route("/questions/new")
      */
+    #[IsGranted("ROLE_USER")]
     public function new()
     {
         return new Response('Sounds like a GREAT feature for V2!');
