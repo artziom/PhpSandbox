@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,5 +16,14 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', [
             'error' => $authenticationUtils->getLastAuthenticationError()
         ]);
+    }
+
+    /**
+     * @throws Exception
+     */
+    #[Route('/logout', name: 'app_logout')]
+    public function logout()
+    {
+        throw new Exception('logout() should never be reached.');
     }
 }
