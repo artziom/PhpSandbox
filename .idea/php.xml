@@ -166,6 +166,8 @@
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/doctrine-orm-adapter" />
       <path value="$PROJECT_DIR$/application/vendor/pagerfanta/twig" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/ux-chartjs" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-icu" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
