@@ -169,6 +169,8 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/form" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/application/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/rate-limiter" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/lock" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
