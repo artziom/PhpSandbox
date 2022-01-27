@@ -168,6 +168,7 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/ux-chartjs" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/form" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/application/vendor/symfonycasts/verify-email-bundle" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
