@@ -177,6 +177,9 @@
       <path value="$PROJECT_DIR$/application/vendor/spomky-labs/otphp" />
       <path value="$PROJECT_DIR$/application/vendor/thecodingmachine/safe" />
       <path value="$PROJECT_DIR$/application/vendor/scheb/2fa-totp" />
+      <path value="$PROJECT_DIR$/application/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/application/vendor/endroid/qr-code" />
+      <path value="$PROJECT_DIR$/application/vendor/dasprid/enum" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
