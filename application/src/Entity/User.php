@@ -2,36 +2,29 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Scheb\TwoFactorBundle\Model\Totp\TotpConfiguration;
-use Scheb\TwoFactorBundle\Model\Totp\TotpConfigurationInterface;
-use Scheb\TwoFactorBundle\Model\Totp\TwoFactorInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFactorInterface
+class User implements UserInterface
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    #[Groups("user:read")]
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Email
+     * @Assert\NotBlank()
      */
-    #[Groups("user:read")]
     private $email;
 
     /**
@@ -40,37 +33,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     private $roles = [];
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    #[Groups("user:read")]
-    private $firstName;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
-
-    private $plainPassword;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Question::class, mappedBy="owner")
-     */
-    private $questions;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isVerified = false;
-
-    /**
-     * @ORM\Column(name="totpSecret", type="string", nullable=true)
-     */
-    private ?string $totpSecret;
-
-    public function __construct()
-    {
-        $this->questions = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -94,17 +60,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
      *
      * @see UserInterface
      */
-    public function getUserIdentifier(): string
-    {
-        return (string)$this->email;
-    }
-
-    /**
-     * @deprecated since Symfony 5.3, use getUserIdentifier instead
-     */
     public function getUsername(): string
     {
-        return (string)$this->email;
+        return (string) $this->email;
     }
 
     /**
@@ -126,9 +84,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
     {
-        return $this->password;
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
@@ -139,13 +100,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     }
 
     /**
-     * This method can be removed in Symfony 6.0 - is not needed for apps that do not check user passwords.
-     *
      * @see UserInterface
      */
-    public function getSalt(): ?string
+    public function getSalt()
     {
-        return null;
+        // not needed when using the "bcrypt" algorithm in security.yaml
     }
 
     /**
@@ -153,111 +112,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
      */
     public function eraseCredentials()
     {
-        $this->plainPassword = null;
-    }
-
-    public function getPlainPassword(): ?string
-    {
-        return $this->plainPassword;
-    }
-
-    public function setPlainPassword(string $plainPassword): self
-    {
-        $this->plainPassword = $plainPassword;
-
-        return $this;
-    }
-    
-    #[Groups("user:read")]
-    public function getAvatarUri(int $size = 32): string
-    {
-        // https://ui-avatars.com/api/?name={{ app.user.firstName|url_encode }}&size=32&background=random
-
-        return 'https://ui-avatars.com/api/?' . http_build_query([
-                'name' => $this->getDisplayName(),
-                'size' => $size,
-                'background' => 'random'
-            ]);
-    }
-
-    public function getFirstName(): ?string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(?string $firstName): self
-    {
-        $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    public function getDisplayName(): string
-    {
-        return $this->getFirstName() ?: $this->getEmail();
-    }
-
-    /**
-     * @return Collection|Question[]
-     */
-    public function getQuestions(): Collection
-    {
-        return $this->questions;
-    }
-
-    public function addQuestion(Question $question): self
-    {
-        if (!$this->questions->contains($question)) {
-            $this->questions[] = $question;
-            $question->setOwner($this);
-        }
-
-        return $this;
-    }
-
-    public function removeQuestion(Question $question): self
-    {
-        if ($this->questions->removeElement($question)) {
-            // set the owning side to null (unless already changed)
-            if ($question->getOwner() === $this) {
-                $question->setOwner(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getIsVerified(): ?bool
-    {
-        return $this->isVerified;
-    }
-
-    public function setIsVerified(bool $isVerified): self
-    {
-        $this->isVerified = $isVerified;
-
-        return $this;
-    }
-
-    public function isTotpAuthenticationEnabled(): bool
-    {
-        return $this->totpSecret ? true : false;
-    }
-
-    public function getTotpAuthenticationUsername(): string
-    {
-        return $this->getUserIdentifier();
-    }
-
-    public function getTotpAuthenticationConfiguration(): ?TotpConfigurationInterface
-    {
-        return new TotpConfiguration($this->totpSecret, TotpConfiguration::ALGORITHM_SHA1, 30, 6);
-    }
-
-    public function setTotpSecret(?string $totpSecret): self
-    {
-        $this->totpSecret = $totpSecret;
-
-        return $this;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }
