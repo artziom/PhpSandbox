@@ -3,8 +3,9 @@
 }) }}
     {% if addToCartForm.color is defined %}
         <div data-controller="color-square">
-            {{ form_widget(addToCartForm.color) }}
-
+            {{ form_widget(addToCartForm.color, {
+                attr: { 'data-color-square-target': 'select'}
+            }) }}
             {% for color in addToCartForm.vars.data.product.colors %}
                 <button
                     class="color-square"
@@ -12,6 +13,7 @@
                     data-action="color-square#selectColor"
                     aria-label="Color #{{ color.name }}"
                     data-color-square-target="colorSquare"
+                    data-color-id="{{ color.id }}"
                     style="background-color: rgb({{ color.red }}, {{ color.green }}, {{ color.blue }});"
                 ></button>
             {% endfor %}
