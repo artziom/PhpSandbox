@@ -11,6 +11,7 @@
                     type="button"
                     data-action="color-square#selectColor"
                     aria-label="Color #{{ color.name }}"
+                    data-color-square-target="colorSquare"
                     style="background-color: rgb({{ color.red }}, {{ color.green }}, {{ color.blue }});"
                 ></button>
             {% endfor %}
