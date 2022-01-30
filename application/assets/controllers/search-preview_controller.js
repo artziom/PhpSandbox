@@ -3,7 +3,9 @@ import {Controller} from "@hotwired/stimulus";
 export default class extends Controller {
     static values = {
         url: String,
-    }
+    };
+
+    static targets = ['result'];
 
     async onSearchInput(event){
         const params = new URLSearchParams({
@@ -12,6 +14,6 @@ export default class extends Controller {
         });
 
         const response = await fetch(`${this.urlValue}?${params.toString()}`);
-        console.log(await response.text());
+        this.resultTarget.innerHTML = await response.text();
     }
 }
