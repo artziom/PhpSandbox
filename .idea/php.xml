@@ -149,6 +149,7 @@
       <path value="$PROJECT_DIR$/application/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/application/vendor/twig/intl-extra" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/ux-chartjs" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
