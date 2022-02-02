@@ -1,5 +1,4 @@
 import {Controller} from "@hotwired/stimulus";
-import ReactDOM from 'react-dom';
 import React from 'react';
 import FeaturedProduct from "../components/FeaturedProduct";
 
@@ -8,9 +7,11 @@ export default class extends Controller{
         product: Object
     }
     connect() {
-        ReactDOM.render(
-            <FeaturedProduct product={this.productValue} />,
-            this.element
-        )
+        import('react-dom').then((ReactDOM) => {
+            ReactDOM.default.render(
+                <FeaturedProduct product={this.productValue} />,
+                this.element
+            )
+        });
     }
 }
