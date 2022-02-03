@@ -6,13 +6,17 @@
     <div class="container-fluid mt-4">
         <div class="d-flex flex-row">
             <h1 class="me-3">Product index</h1>
-            <div {{ stimulus_controller('modal-form') }}>
+            <div {{ stimulus_controller('modal-form', {
+                formUrl: path('product_admin_new')
+            }) }}>
                 <button
                         class="btn btn-primary btn-sm"
                         {{ stimulus_action('modal-form', "openModal") }}
                 >Add+</button>
 
-                {{ include('_modal.html.twig') }}
+                {{ include('_modal.html.twig', {
+                    modalTitle: 'Add a new Product'
+                }) }}
             </div>
         </div>
 
