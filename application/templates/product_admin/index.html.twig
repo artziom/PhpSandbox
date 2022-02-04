@@ -3,7 +3,12 @@
 {% block title %}Product index{% endblock %}
 
 {% block body %}
-    <div class="container-fluid mt-4">
+    <div
+            class="container-fluid mt-4"
+            {{ stimulus_controller('reload-content', {
+                url: path('product_admin_index')
+            }) }}
+    >
         <div class="d-flex flex-row">
             <h1 class="me-3">Product index</h1>
             <div
@@ -23,43 +28,9 @@
             </div>
         </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Brand</th>
-                    <th>Weight</th>
-                    <th>Price</th>
-                    <th>StockQuantity</th>
-                    <th>ImageFilename</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for product in products %}
-                <tr>
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.brand }}</td>
-                    <td>{{ product.weight }}</td>
-                    <td>{{ product.price }}</td>
-                    <td>{{ product.stockQuantity }}</td>
-                    <td>{{ product.imageFilename }}</td>
-                    <td>
-                        <a href="{{ path('product_admin_show', {'id': product.id}) }}">show</a>
-                        <a href="{{ path('product_admin_edit', {'id': product.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="9">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        <div {{ stimulus_target('reload-content', 'content') }}>
+            {{ include('product_admin/_list.html.twig') }}
+        </div>
 
         <a href="{{ path('product_admin_new') }}">Create new</a>
     </div>
