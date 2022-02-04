@@ -6,8 +6,9 @@
     <div
             class="container-fluid mt-4"
             {{ stimulus_controller('reload-content', {
-                url: path('product_admin_index')
+                url: path('product_admin_index', {ajax: 1})
             }) }}
+            {{ stimulus_action('reload-content', 'refreshContent', 'modal-form:success') }}
     >
         <div class="d-flex flex-row">
             <h1 class="me-3">Product index</h1>

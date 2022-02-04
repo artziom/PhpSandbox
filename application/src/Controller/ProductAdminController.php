@@ -16,7 +16,7 @@ class ProductAdminController extends AbstractController
     #[Route('/', name: 'product_admin_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository, Request $request): Response
     {
-        $template = $request->isXmlHttpRequest() ? '_list.html.twig' : 'index.html.twig';
+        $template = $request->query->get('ajax') ? '_list.html.twig' : 'index.html.twig';
 
         return $this->render('product_admin/'.$template, [
             'products' => $productRepository->findBy([], ['id' => 'DESC']),
