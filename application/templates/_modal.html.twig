@@ -12,7 +12,11 @@
                         data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
-            <div class="modal-body" {{ stimulus_target('modal-form', 'modalBody') }}>
+            <div
+                    class="modal-body"
+                    {{ stimulus_target('modal-form', 'modalBody') }}
+                    {{ stimulus_action('modal-form', 'submitForm', "submit") }}
+            >
                 {{ modalContent|default('Loading...') }}
             </div>
             <div class="modal-footer">
