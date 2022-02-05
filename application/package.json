@@ -26,6 +26,6 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "stimulus-use": "^0.41.0"
+        "stimulus-use": "^0.50.0-2"
     }
 }
