@@ -2,6 +2,7 @@
     {% for product in products %}
         <a
                 class="list-group-item list-group-item-action"
+                role="option"
                 href="{{ path('app_product', { id: product.id }) }}"
         >
             <div class="d-flex align-items-center justify-content-between">
@@ -17,7 +18,7 @@
             </div>
         </a>
     {% else %}
-        <div class="list-group-item">
+        <div class="list-group-item" role="option" aria-disabled="true">
             No results found!
         </div>
     {% endfor %}
