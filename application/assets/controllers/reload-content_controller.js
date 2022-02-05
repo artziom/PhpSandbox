@@ -7,9 +7,11 @@ export default class extends Controller{
     }
 
     async refreshContent(event) {
-        this.contentTarget.style.opacity = .5;
+        const target = this.hasContentTarget ? this.contentTarget : this.element;
+        target.style.opacity = .5;
         const respone = await fetch(this.urlValue);
-        this.contentTarget.innerHTML = await respone.text();
-        this.contentTarget.style.opacity = 1;
+
+        target.innerHTML = await respone.text();
+        target.style.opacity = 1;
     }
 }
