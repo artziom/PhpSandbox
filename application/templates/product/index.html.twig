@@ -34,9 +34,14 @@
                         <form>
                             <div
                                     class="input-group"
-                                    {{ stimulus_controller('autocomplete', {
-                                        url: path('app_homepage', {preview: 1})
+                                    {{ stimulus_controller({
+                                        'autocomplete': {
+                                            url: path('app_homepage', {preview: 1}),
+                                            skipHiddenProperty: true,
+                                        },
+                                        'autocomplete-transition': {}
                                     }) }}
+                                    {{ stimulus_action('autocomplete-transition', 'toggle', 'toggle') }}
                             >
                                 <input
                                         name="q"
@@ -49,6 +54,7 @@
                                 <div
                                         class="search-preview"
                                         data-autocomplete-target="results"
+                                        data-autocomplete-transition-target="results"
                                 ></div>
                             </div>
                         </form>
