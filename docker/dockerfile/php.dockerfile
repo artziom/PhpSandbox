@@ -1,4 +1,4 @@
-FROM php:8.0-fpm
+FROM php:8.1-fpm
 
 # composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install xdebug, pdo_mysql, zip
-RUN pecl install xdebug-3.0.1 \
+RUN pecl install xdebug \
     && pecl install redis \
     && pecl install memcached \
     && pecl install mongodb \

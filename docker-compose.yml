@@ -52,7 +52,7 @@ services:
       - database
       - mongo
     env_file:
-      - docker/env/apache-php.env
+      - docker/env/php.env
 
   web:
     image: nginx
