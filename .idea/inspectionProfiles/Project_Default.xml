@@ -170,7 +170,7 @@
     <inspection_tool class="ProperNullCoalescingOperatorUsageInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PropertyInitializationFlawsInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PsalmGlobal" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-      <option name="showInfo" value="true" />
+      <option name="config" value="psalm.xml" />
     </inspection_tool>
     <inspection_tool class="RandomApiMigrationInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="RealpathInStreamContextInspection" enabled="false" level="WARNING" enabled_by_default="false" />

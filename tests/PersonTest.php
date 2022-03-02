@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Utils\Person;
 use PHPUnit\Framework\TestCase;
 
 class PersonTest extends TestCase

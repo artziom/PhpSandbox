@@ -1,13 +1,10 @@
 <?php
 require "./vendor/autoload.php";
 
-$clockwork = Clockwork\Support\Vanilla\Clockwork::init([
-    'api' => '/clockwork.php?request=',
-    'register_helpers' => true,
-    'storage_files_path' => __DIR__ . '/clockwork'
-]);
+$exampleName = "App\\Example\\";
+$exampleName .= ucfirst((string)($_GET['example'] ?? 'home'));
+$exampleName .= "Example";
 
-$example = new ClockworkExample();
+/** @var App\Example\SandboxExample $example */
+$example = new $exampleName();
 $example->run();
-
-$clockwork->requestProcessed();

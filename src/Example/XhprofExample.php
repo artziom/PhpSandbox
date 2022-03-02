@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Example;
 
 class XhprofExample implements SandboxExample
 {

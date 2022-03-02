@@ -1,12 +1,14 @@
 <?php
+namespace App\Example;
 
+use MongoDB\Client;
 
 class MongoExample implements SandboxExample
 {
 
     public function run()
     {
-        $mongoClient = new MongoDB\Client("mongodb://mongo/", [
+        $mongoClient = new Client("mongodb://mongo/", [
             'username' => 'root',
             'password' => 'secret',
         ]);

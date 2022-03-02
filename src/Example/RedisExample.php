@@ -1,11 +1,16 @@
 <?php
+namespace App\Example;
 
+use App\Utils\Person;
+use Redis;
 
 class RedisExample implements SandboxExample
 {
 
     public function run()
     {
+        $p1 = new Person("Artur", 32);
+
         $redis = new Redis();
         $redis->connect("redis");
         $redisInfo = $redis->info();

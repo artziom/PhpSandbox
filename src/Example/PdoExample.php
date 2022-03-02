@@ -1,5 +1,9 @@
 <?php
+namespace App\Example;
 
+use App\Utils\Person;
+use PDO;
+use PDOException;
 
 class PdoExample implements SandboxExample
 {
