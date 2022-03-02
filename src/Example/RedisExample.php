@@ -16,6 +16,7 @@ class RedisExample implements SandboxExample
         $redisInfo = $redis->info();
         $redis->hSet("redis:person", 'name', $p1->getName());
         $redis->hSet("redis:person", 'age', $p1->getAge());
+        var_dump($redisInfo);
         var_dump($redis->hGetAll("redis:person"));
         var_dump($redis->hGet("redis:person", "name"));
         var_dump($redis->info("memory"));

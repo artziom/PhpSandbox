@@ -29,8 +29,8 @@ RUN pecl install xdebug-3.0.1 \
 # Set php.ini file
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
     && echo "xdebug.client_host=host.docker.internal" >> $PHP_INI_DIR/php.ini \
-    && echo "xdebug.mode=develop,debug,coverage,gcstats,profile,trace" >> $PHP_INI_DIR/php.ini \
+    && echo "xdebug.mode=develop,debug" >> $PHP_INI_DIR/php.ini \
     && echo "xdebug.start_with_request=trigger" >> $PHP_INI_DIR/php.ini \
-    && echo "xdebug.output_dir=/code/var/xdebug_output" >> $PHP_INI_DIR/php.ini \
+    && echo "xdebug.output_dir=/code/var/tmp/xdebug_output" >> $PHP_INI_DIR/php.ini \
     && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini \
-    && echo "xhprof.output_dir=/tmp/xhprof" >> $PHP_INI_DIR/php.ini
+    && echo "xhprof.output_dir=/code/var/tmp/xhprof" >> $PHP_INI_DIR/php.ini
