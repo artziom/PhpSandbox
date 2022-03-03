@@ -40,7 +40,11 @@
             "*": "dist"
         },
         "sort-packages": true,
-        "platform": {}
+        "platform": {},
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
     },
     "autoload": {
         "psr-4": {
